@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Weekly Content Planner — Week of 7-20",
+  "schemaVersion": 1,
+  "description": "The week of July 20, 2026, on the 4-phase template. IHWI Video Wk 4 = VERONA (all filmed: Living in Verona long-form + 3 reels). Market Rotation rides the Verona video. IHWI Blogs Wk 6 = Sun Prairie + Waunakee (built, Lofty-ready). Vet Cluster Wk 1 = The Veteran's Guide to Buying a Home in Dane County (pillar launch). ROH Phase 7 = VA C&P Exam long-form + reels #1-3 (#4-8 next week). Own auto-save, separate from other weeks.",
+  "mcpTools": [],
+  "mcpServerNames": []
+}
+</script>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Content Planner — Week of 7-20 · Marketing Execution Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --navy:#002850; --gold:#C9A84C; --red:#B40000; --ink:#111827; --muted:#4B5563; --line:#E5E7EB; --soft:#F7F8FB;
+    --todo:#D97706; --sched:#2563EB; --done:#16A34A; --todo-bg:#FEF3C7; --sched-bg:#DBEAFE; --done-bg:#DCFCE7; }
+  *{box-sizing:border-box;}
+  body{font-family:'Source Sans 3',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:var(--soft);line-height:1.45;margin:0;font-size:14px;}
+  .wrap{max-width:1240px;margin:0 auto;padding:18px 20px 90px;}
+  .topbar{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+  .titlerow{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap;}
+  .weekof-big{display:flex;flex-direction:column;gap:4px;background:var(--navy);border-radius:12px;padding:10px 16px;flex:0 0 auto;}
+  .weekof-big label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#cdd8e6;}
+  .weekof-big input{font-family:inherit;font-size:16px;font-weight:700;padding:5px 8px;border:none;border-radius:7px;background:#fff;color:var(--navy);}
+  .weekof-big input:focus{outline:none;box-shadow:0 0 0 3px rgba(255,255,255,.35);}
+  h1{font-family:'Playfair Display',serif;color:var(--navy);margin:0 0 3px;font-size:24px;}
+  .sub{color:var(--muted);font-size:13px;margin-bottom:14px;}
+  .cyc{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:flex-end;padding:12px 14px;background:var(--soft);border:1px solid var(--line);border-radius:10px;}
+  .field{display:flex;flex-direction:column;gap:4px;}
+  .field label{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);}
+  .field input{font-family:inherit;font-size:14px;padding:6px 9px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);}
+  .field.sm input{width:86px;} .field input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(0,40,80,.12);}
+  .actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 0;}
+  .btn{font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);}
+  .btn:hover{background:var(--soft);} .save-note{font-size:12px;color:var(--muted);align-self:center;}
+  /* Skipped track (struck out) */
+  .panel.skiptrack{opacity:.6;}
+  .panel.skiptrack .phead h2,.panel.skiptrack .rlabel,.panel.skiptrack .rlabel .kind,.panel.skiptrack input.idea{text-decoration:line-through;}
+  .panel.skiptrack input.idea{color:var(--muted);}
+  /* Tab bar */
+  .tabbar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;}
+  .tab{flex:1 1 auto;min-width:150px;font-family:inherit;font-size:14.5px;font-weight:700;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--muted);
+       border-radius:12px;padding:13px 16px;text-align:left;position:relative;transition:.12s;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+  .tab .tnum{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--soft);color:var(--muted);font-size:12px;margin-right:8px;}
+  .tab .tsmall{display:block;font-size:11.5px;font-weight:500;color:var(--muted);margin-top:3px;letter-spacing:.01em;}
+  .tab.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .tab.active .tnum{background:var(--gold);color:#1b1300;}
+  .tab.active .tsmall{color:#cdd8e6;}
+  .panel-view{display:none;}
+  .panel-view.active{display:block;}
+  .derived-note{font-size:12px;color:var(--muted);background:#fffdf5;border:1px solid var(--gold);border-left:3px solid var(--gold);border-radius:9px;padding:9px 13px;margin-bottom:14px;}
+  .brandhead{display:flex;align-items:center;gap:12px;margin:22px 0 12px;}
+  .brandhead .bh-label{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--navy);white-space:nowrap;}
+  .brandhead.roh .bh-label{color:var(--red);}
+  .brandhead .bh-line{flex:1 1 auto;height:2px;background:linear-gradient(90deg,var(--gold),transparent);border-radius:2px;}
+  .brandhead.roh .bh-line{background:linear-gradient(90deg,var(--red),transparent);}
+  /* Plan track panels */
+  .panel{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.05);display:flex;}
+  .vtab{flex:0 0 38px;writing-mode:vertical-rl;text-orientation:mixed;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px;padding:16px 0;text-align:center;}
+  .vtab.ih{background:var(--navy);} .vtab.roh{background:var(--red);}
+  .pbody{flex:1 1 auto;min-width:0;}
+  .phead{padding:12px 18px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;user-select:none;}
+  .phead.ih{background:var(--navy);} .phead.roh{background:var(--red);}
+  .phead h2{margin:0;font-size:15.5px;letter-spacing:.02em;}
+  .phead .chev{font-size:14px;opacity:.85;transition:transform .15s;}
+  .panel.collapsed .phead .chev{transform:rotate(-90deg);}
+  @media screen{ .panel.collapsed .pbody > *:not(.phead){display:none;} }
+  .gsub{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding:10px 18px 2px;}
+  .row{display:flex;align-items:center;gap:11px;padding:7px 18px;border-top:1px solid #F1F3F6;}
+  .row .rlabel{width:150px;flex:0 0 150px;font-size:13px;font-weight:600;color:var(--ink);}
+  .row .rlabel .kind{display:block;font-size:11px;font-weight:500;color:var(--muted);}
+  .row input.idea{flex:1 1 auto;font-family:inherit;font-size:13.5px;padding:7px 10px;border:1px solid transparent;border-bottom:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);min-width:80px;}
+  .row input.idea:focus{outline:none;border:1px solid var(--navy);box-shadow:0 0 0 3px rgba(0,40,80,.10);}
+  .row input.idea::placeholder{color:#B6BDC7;}
+  .row.done input.idea{color:var(--muted);text-decoration:line-through;text-decoration-color:#c9ccd2;}
+  .status{display:flex;gap:5px;flex:0 0 auto;}
+  .st{width:26px;height:26px;border-radius:7px;border:1px solid var(--line);background:#fff;color:#9AA1AC;font-size:11px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit;}
+  .st.on.t{background:var(--todo-bg);border-color:var(--todo);color:var(--todo);}
+  .st.on.s{background:var(--sched-bg);border-color:var(--sched);color:var(--sched);}
+  .st.on.d{background:var(--done-bg);border-color:var(--done);color:var(--done);}
+  /* Distribution tiers */
+  .tier{display:flex;gap:4px;flex:0 0 auto;align-items:center;}
+  .tierbtn{width:28px;height:26px;border-radius:7px;border:1px solid var(--line);background:#fff;color:#9AA1AC;font-family:inherit;font-size:11px;font-weight:800;cursor:pointer;}
+  .tierbtn:hover{background:var(--soft);}
+  .tierbtn.on.a{background:#FDE68A;border-color:#B7791F;color:#7C4A03;}
+  .tierbtn.on.b{background:#DBEAFE;border-color:#2563EB;color:#1D4ED8;}
+  .tierbtn.on.c{background:#F3F4F6;border-color:#9CA3AF;color:#4B5563;}
+  .tierbadge{display:inline-flex;align-items:center;justify-content:center;min-width:23px;height:21px;border-radius:6px;font-size:10.5px;font-weight:800;margin-right:7px;border:1px solid transparent;}
+  .tierbadge.a{background:#FDE68A;border-color:#D6A928;color:#704600;}
+  .tierbadge.b{background:#DBEAFE;border-color:#93C5FD;color:#1D4ED8;}
+  .tierbadge.c{background:#F3F4F6;border-color:#D1D5DB;color:#4B5563;}
+  .tierlegend{display:grid;grid-template-columns:repeat(3,minmax(180px,1fr));gap:8px;margin-bottom:14px;}
+  .tierlegend div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-size:12px;color:var(--muted);}
+  .tierlegend b{color:var(--ink);}
+  /* Destination Required/Optional/Off controls */
+  .destbtn{flex:0 0 auto;font-family:inherit;font-size:11px;font-weight:800;padding:5px 8px;border-radius:7px;border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer;}
+  .destbtn:hover{border-color:var(--navy);color:var(--navy);}
+  .destbtn.open{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .destdrawer{padding:9px 18px 12px 165px;background:var(--soft);display:flex;flex-wrap:wrap;gap:6px;align-items:center;border-top:1px solid #F1F3F6;}
+  .destdrawer[hidden]{display:none;}
+  .destdrawer .desthint{flex:1 0 100%;font-size:11px;color:var(--muted);margin-bottom:3px;}
+  .destchip{font-family:inherit;font-size:11px;font-weight:650;padding:5px 9px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:6px;}
+  .destchip em{font-style:normal;font-size:9px;font-weight:800;letter-spacing:.03em;padding:1px 6px;border-radius:5px;}
+  .destchip.req{border-color:var(--done);background:var(--done-bg);color:#14532d;} .destchip.req em{background:var(--done);color:#fff;}
+  .destchip.opt{border-style:dashed;color:var(--muted);} .destchip.opt em{background:#E5E7EB;color:#4B5563;}
+  .destchip.off{opacity:.55;text-decoration:line-through;} .destchip.off em{background:#F3F4F6;color:#9CA3AF;}
+  .destchip.locked{cursor:default;} .destchip.locked em{background:#B7791F;color:#fff;}
+  @media(max-width:760px){.destdrawer{padding-left:18px;}}
+  /* Marketing execution board */
+  .schedule-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 14px;}
+  .schedule-actions .save-note{margin-left:auto;}
+  .schedule-board{display:flex;flex-direction:column;gap:14px;}
+  .day-block{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+  .day-block.complete{border-color:#86EFAC;}
+  .day-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 16px;background:var(--navy);color:#fff;}
+  .day-block.complete .day-head{background:#166534;}
+  .day-title{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;}
+  .day-title h2{font-family:'Playfair Display',serif;font-size:19px;margin:0;}
+  .day-date{font-size:12px;opacity:.78;font-weight:600;}
+  .day-progress{font-size:12px;font-weight:700;background:rgba(255,255,255,.16);border-radius:999px;padding:4px 9px;white-space:nowrap;}
+  .day-actions{display:flex;align-items:center;gap:7px;flex-wrap:wrap;justify-content:flex-end;}
+  .day-action{font-family:inherit;font-size:11.5px;font-weight:750;border:1px solid rgba(255,255,255,.42);color:#fff;background:rgba(255,255,255,.10);border-radius:7px;padding:6px 9px;cursor:pointer;}
+  .day-action:hover{background:rgba(255,255,255,.20);}
+  .day-body{padding:12px;background:#F7F8FB;display:flex;flex-direction:column;gap:10px;}
+  .asset-card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  .asset-card.complete{border-color:#86EFAC;}
+  .asset-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 13px;cursor:pointer;user-select:none;}
+  .asset-card.complete .asset-head{background:#F0FDF4;}
+  .asset-ident{display:flex;align-items:flex-start;gap:9px;min-width:0;}
+  .asset-copy{min-width:0;}
+  .asset-title{font-size:13.5px;font-weight:750;color:var(--ink);line-height:1.25;}
+  .asset-meta{font-size:11px;color:var(--muted);margin-top:3px;display:flex;gap:7px;flex-wrap:wrap;}
+  .brand-chip{display:inline-flex;align-items:center;border-radius:999px;padding:2px 7px;font-size:10px;font-weight:800;letter-spacing:.02em;}
+  .brand-chip.ih{background:#E6EEF7;color:var(--navy);}
+  .brand-chip.roh{background:#FEE2E2;color:var(--red);}
+  .asset-summary{display:flex;align-items:center;gap:8px;flex:0 0 auto;}
+  .asset-progress{font-size:11px;font-weight:750;color:var(--muted);white-space:nowrap;}
+  .complete-check{color:#15803D;font-size:17px;font-weight:900;}
+  .asset-chev{font-size:13px;color:var(--muted);transition:transform .15s;}
+  .asset-card.collapsed .asset-chev{transform:rotate(-90deg);}
+  .asset-card.collapsed .asset-platforms{display:none;}
+  .asset-platforms{border-top:1px solid var(--line);}
+  .platform-row{display:grid;grid-template-columns:minmax(270px,1.8fr) 112px 138px 126px minmax(150px,.9fr);gap:10px;align-items:center;padding:9px 13px;border-top:1px solid #F1F3F6;}
+  .platform-row.primary-destination{background:#fffaf0!important;border-left:4px solid var(--gold);}
+  .platform-row.primary-destination .platform-channel{color:#7a5600;}
+  .platform-channel{display:block;font-size:12.5px;font-weight:800;color:var(--ink);}
+  .platform-row:first-child{border-top:none;}
+  .platform-row:nth-child(even){background:#FAFBFC;}
+  .platform-name{font-size:12.5px;font-weight:750;color:var(--ink);}
+  .platform-format{display:block;font-size:10.5px;font-weight:500;color:var(--muted);margin-top:1px;}
+  .platform-row input,.platform-row select{font-family:inherit;font-size:11.5px;padding:6px 7px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);width:100%;}
+  .platform-row input[type=time]{min-width:102px;}
+  .pubstatus{font-weight:750;}
+  .pubstatus.todo{background:#fff;color:#6B7280;}
+  .pubstatus.ready{background:#FEF3C7;color:#92400E;border-color:#F59E0B;}
+  .pubstatus.scheduled{background:#DBEAFE;color:#1D4ED8;border-color:#60A5FA;}
+  .pubstatus.published{background:#DCFCE7;color:#15803D;border-color:#86EFAC;}
+  .pubstatus.skipped{background:#F3F4F6;color:#6B7280;border-color:#D1D5DB;}
+  .platform-note{font-size:10.5px;color:var(--muted);line-height:1.25;}
+  .conflict{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:3px 7px;font-size:10.5px;font-weight:750;white-space:nowrap;}
+  .conflict.warn{background:#FEE2E2;color:#B91C1C;border:1px solid #FCA5A5;}
+  .schedule-key{display:flex;gap:7px;flex-wrap:wrap;margin:-3px 0 13px;}
+  .schedule-key span{font-size:10.5px;font-weight:700;border-radius:999px;padding:4px 8px;border:1px solid var(--line);background:#fff;color:var(--muted);}
+  .schedule-key .k-ready{background:#FEF3C7;color:#92400E;border-color:#F59E0B;}
+  .schedule-key .k-scheduled{background:#DBEAFE;color:#1D4ED8;border-color:#60A5FA;}
+  .schedule-key .k-published{background:#DCFCE7;color:#15803D;border-color:#86EFAC;}
+  /* Placement Map (asset-first readout) */
+  .map-actions{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px;}
+  .map-card{background:#fff;border:1px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+  .map-card.complete{border-color:#86EFAC;}
+  .map-head{display:flex;align-items:flex-start;gap:9px;padding:11px 14px;background:var(--soft);border-bottom:1px solid var(--line);}
+  .map-title{font-size:14px;font-weight:750;color:var(--ink);line-height:1.25;}
+  .map-sub{font-size:11.5px;color:var(--muted);margin-top:3px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+  .map-sub .brand-chip{font-size:9.5px;}
+  .map-body{padding:2px 0;}
+  .map-row{display:grid;grid-template-columns:158px 1fr 110px;gap:12px;align-items:center;padding:8px 14px;border-top:1px solid #F1F3F6;}
+  .map-row:first-child{border-top:none;}
+  .map-row.pub{background:#F0FDF4;}
+  .map-when{font-size:12px;font-weight:700;color:var(--navy);white-space:nowrap;}
+  .map-when.web{color:#7a5600;}
+  .map-plat b{font-size:13px;color:var(--ink);}
+  .map-plat small{display:block;font-size:11px;color:var(--muted);margin-top:1px;}
+  .map-status{justify-self:start;font-size:10px;font-weight:800;border-radius:999px;padding:3px 10px;border:1px solid var(--line);text-transform:uppercase;letter-spacing:.03em;}
+  .map-status.todo{background:#fff;color:#6B7280;}
+  .map-status.ready{background:#FEF3C7;color:#92400E;border-color:#F59E0B;}
+  .map-status.scheduled{background:#DBEAFE;color:#1D4ED8;border-color:#60A5FA;}
+  .map-status.published{background:#DCFCE7;color:#15803D;border-color:#86EFAC;}
+  .map-status.skipped{background:#F3F4F6;color:#6B7280;border-color:#D1D5DB;}
+  @media(max-width:760px){.map-row{grid-template-columns:1fr;gap:3px;}}
+  @media print{.map-card{break-inside:avoid;box-shadow:none;}}
+
+  /* Implementation platform toggle buttons */
+  .platrow{display:flex;gap:6px;flex-wrap:wrap;flex:1 1 auto;}
+  .platbtn{font-family:inherit;font-size:11px;font-weight:700;letter-spacing:.02em;padding:6px 10px;border-radius:7px;border:1px solid var(--line);background:#fff;color:#9AA1AC;cursor:pointer;}
+  .platbtn:hover{background:var(--soft);}
+  .platbtn.on{background:var(--done-bg);border-color:var(--done);color:var(--done);}
+  /* Dynamic (auto-fitting) track add/remove controls */
+  .adddyn-row{justify-content:center;padding:9px 18px;}
+  .adddyn{font-family:inherit;font-size:12.5px;font-weight:700;color:var(--navy);background:var(--soft);border:1px dashed var(--line);border-radius:8px;padding:7px 14px;cursor:pointer;width:100%;}
+  .adddyn:hover{background:#eef1f6;}
+  .rmdyn{font-family:inherit;font-size:12px;color:#9AA1AC;background:none;border:none;cursor:pointer;padding:4px 6px;flex:0 0 auto;}
+  .rmdyn:hover{color:var(--red);}
+  /* Prep / Follow-up group cards */
+  .gcard{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.05);overflow:hidden;}
+  .gcard-hd{padding:12px 18px;background:var(--navy);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;gap:9px;}
+  .gcard-hd .badge{font-size:11px;font-weight:700;background:rgba(255,255,255,.2);border-radius:999px;padding:2px 9px;}
+  .gcard.roh .gcard-hd{background:var(--red);}
+  .empty-hint{padding:16px 18px;color:var(--muted);font-size:13px;font-style:italic;}
+  /* Implementation table */
+  .disttbl{width:100%;border-collapse:collapse;font-size:12.5px;}
+  .disttbl th{background:var(--navy);color:#fff;text-align:left;padding:9px 11px;font-weight:600;font-size:11px;letter-spacing:.04em;text-transform:uppercase;position:sticky;top:0;}
+  .disttbl.roh th{background:var(--red);}
+  .disttbl td{border-bottom:1px solid var(--line);padding:6px 11px;vertical-align:middle;}
+  .disttbl tr:nth-child(even) td{background:var(--soft);}
+  .disttbl .src{font-weight:600;color:var(--ink);}
+  .disttbl input{width:100%;font-family:inherit;font-size:12.5px;padding:5px 7px;border:1px solid var(--line);border-radius:6px;background:#fff;}
+  .disttbl input.lk{background:#fffdf5;}
+  .tblwrap{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:auto;box-shadow:0 1px 3px rgba(0,0,0,.05);}
+  .fu-note{flex:1 1 auto;}
+  .foot-tip{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;}
+  @media print{.actions,.save-note,.tabbar .tab:not(.active){}.chev{display:none;} body{background:#fff;} .panel,.gcard,.tblwrap,.topbar{box-shadow:none;break-inside:avoid;} .panel-view{display:block!important;} .tabbar{display:none;} @media screen{} .panel.collapsed .pbody > *{display:block!important;} }
+  @media(max-width:760px){.row{flex-wrap:wrap;}.row .rlabel{flex:1 0 100%;width:auto;}.tierlegend{grid-template-columns:1fr;}.day-head{align-items:flex-start;flex-direction:column;}.day-actions{justify-content:flex-start;}.platform-row{grid-template-columns:1fr 1fr;}.platform-name{grid-column:1/-1;}.platform-note{grid-column:1/-1;}.schedule-actions .save-note{margin-left:0;flex-basis:100%;}}
+
+/* priority-slot UI */
+.prio{display:inline-flex;align-items:center;gap:3px;background:#eef2f8;border:1px solid #dbe3ef;border-radius:8px;padding:2px 6px;margin:0 6px;flex:0 0 auto}
+.prio.semrush{background:#fbf8ee;border-color:#e7dcae}
+.prioinput{width:50px;border:none;background:transparent;font-weight:800;color:#002850;font-size:13px;text-align:center}
+.prioinput::-webkit-outer-spin-button,.prioinput::-webkit-inner-spin-button{opacity:.4}
+.priolab{font-size:12px;line-height:1}
+.planhint{font-size:11px;color:#6b7688;white-space:nowrap;flex:0 0 auto;margin-right:4px}
+.priobadge{display:inline-block;font-size:11px;font-weight:800;background:#002850;color:#fff;padding:2px 7px;border-radius:6px}
+.sched-rows{display:flex;flex-direction:column}
+.sched-row{display:grid;grid-template-columns:72px 132px 1fr 88px 120px;align-items:center;gap:10px;padding:9px 14px;border-bottom:1px solid #f0f2f6}
+.sched-row:last-child{border-bottom:none}
+.sched-row.primary-destination{background:#fbf8ee}
+.sched-time{font-weight:800;color:#002850;font-variant-numeric:tabular-nums;font-size:13px;white-space:nowrap}
+.sched-what small{display:block;color:#7a8699;font-size:11px}
+.pchip{display:inline-block;color:#fff;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px;white-space:nowrap}
+.pslotbadge{display:inline-block;font-size:10.5px;font-weight:800;color:#002850;background:#eef2f8;border:1px solid #dbe3ef;padding:1px 6px;border-radius:5px}
+.confdot{display:inline-block;width:8px;height:8px;border-radius:50%;vertical-align:middle;margin-left:3px}
+.confdot.hi{background:#1e9e5a}.confdot.me{background:#e0a41c}.confdot.lo{background:#c2c8d2}.confdot.na{background:#7a8699}
+.schedule-key{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:12px;color:#55606f;margin:6px 0 12px}
+.schedule-key .k-p{font-weight:800;color:#002850}
+@media(max-width:640px){.sched-row{grid-template-columns:60px 1fr;row-gap:4px}.sched-plat,.sched-slot{grid-column:2}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="titlerow">
+      <div>
+        <h1>Weekly Content Planner — <span id="titleWeekOf">Week of —</span></h1>
+        <div class="sub">One week, five phases: <b>Plan</b> it &rarr; <b>Prep</b> it &rarr; <b>Schedule</b> each platform &rarr; <b>Implement</b> the distribution &rarr; <b>Follow up</b> with embeds and links. Fill the Plan tab — the rest builds from it.</div>
+      </div>
+      <div class="weekof-big"><label>Week of</label><input type="date" id="weekOfTop"></div>
+    </div>
+    <div class="cyc">
+      <span class="field"><label style="align-self:center;">This week</label></span>
+      <div class="field sm"><label>IHWI Video · Wk</label><input data-k="vidWeek" placeholder="—"></div>
+      <div class="field sm"><label>Market Rotation A · Wk</label><input data-k="rotWeekA" placeholder="—"></div>
+      <div class="field sm"><label>Market Rotation B · Wk</label><input data-k="rotWeekB" placeholder="—"></div>
+      <div class="field sm"><label>IHWI Blogs · Wk</label><input data-k="cycWeek" placeholder="—"></div>
+      <div class="field sm"><label>Vet Cluster Video · Wk</label><input data-k="vetVidWeek" placeholder="—"></div>
+      <div class="field sm"><label>Vet Cluster Blogs · Wk</label><input data-k="vetWeek" placeholder="—"></div>
+      <div class="field sm"><label>ROH Video/Content · Phase</label><input data-k="cycPhase" placeholder="—"></div>
+      <div class="field sm"><label>ROH Blogs · Phase</label><input data-k="rohBlogPhase" placeholder="—"></div>
+    </div>
+    <div class="actions">
+      <button class="btn" id="btnPrint">🖨 Print</button>
+      <button class="btn" id="btnClear">Clear week</button>
+      <span class="save-note" id="saveNote">Saved ✓</span>
+    </div>
+  </div>
+  <div class="tabbar" id="tabbar">
+    <button class="tab active" data-tab="plan"><span class="tnum">1</span>Plan<span class="tsmall">Rank each piece (P1 wins the hot slot)</span></button>
+    <button class="tab" data-tab="prep"><span class="tnum">2</span>Prep<span class="tsmall">Film · design · write / load</span></button>
+    <button class="tab" data-tab="sched"><span class="tnum">3</span>Schedule<span class="tsmall">Day → asset → platform status</span></button>
+    <button class="tab" data-tab="map"><span class="tnum">4</span>Placement Map<span class="tsmall">Asset → all its placements</span></button>
+    <button class="tab" data-tab="impl"><span class="tnum">5</span>Implementation<span class="tsmall">Marketing team distributes</span></button>
+    <button class="tab" data-tab="follow"><span class="tnum">6</span>Follow-up<span class="tsmall">Embeds · links · pinned comments</span></button>
+  </div>
+  <div class="panel-view active" id="view-plan"></div>
+  <div class="panel-view" id="view-prep"></div>
+  <div class="panel-view" id="view-sched"></div>
+  <div class="panel-view" id="view-map"></div>
+  <div class="panel-view" id="view-impl"></div>
+  <div class="panel-view" id="view-follow"></div>
+  <div class="foot-tip">Week of July 20, 2026 — pre-filled. Schedule is strictly Monday-Sunday. Anything that does not fit stays unscheduled for a decision; only Follow-up work may continue beyond the week.</div>
+</div>
+<script>
+/* ---------------- Plan model: 5 tracks, each slot tagged with a kind ---------------- */
+const TRACKS = [
+  { key:'video', name:'IHWI Video', cls:'ih', wkKey:'vidWeek', wkWord:'Week', slots:[
+    {id:'video-lf', label:'Long-form (anchor)', kind:'video'},
+    {id:'video-r1', label:'Reel 1', kind:'reel'},
+    {id:'video-r2', label:'Reel 2', kind:'reel'},
+    {id:'video-r3', label:'Reel 3', kind:'reel'},
+    {id:'video-gbp', label:'GBP', kind:'gbp'},
+    {id:'video-li', label:'LinkedIn', kind:'linkedin'},
+  ]},
+  { key:'marketA', name:'Market Rotation · Market A', cls:'ih', wkKey:'rotWeekA', wkWord:'Week', slots:[
+    {id:'mktA-reel', label:'Market video / reel', kind:'reel'},
+    {id:'mktA-stat', label:'Stat card', kind:'static'},
+    {id:'mktA-car', label:'Carousel', kind:'carousel'},
+    {id:'mktA-gbp', label:'GBP', kind:'gbp'},
+  ]},
+  { key:'marketB', name:'Market Rotation · Market B', cls:'ih', wkKey:'rotWeekB', wkWord:'Week', slots:[
+    {id:'mktB-reel', label:'Market video / reel', kind:'reel'},
+    {id:'mktB-stat', label:'Stat card', kind:'static'},
+    {id:'mktB-car', label:'Carousel', kind:'carousel'},
+    {id:'mktB-gbp', label:'GBP', kind:'gbp'},
+  ]},
+  { key:'blogs', name:'IHWI Blogs', cls:'ih', wkKey:'cycWeek', wkWord:'Week', slots:[
+    {id:'blog-mon', label:'Mon', kind:'blog'},
+    {id:'blog-tue', label:'Tue', kind:'blog'},
+    {id:'blog-wed', label:'Wed', kind:'blog'},
+    {id:'blog-thu', label:'Thu', kind:'blog'},
+    {id:'blog-fri', label:'Fri', kind:'blog'},
+    {id:'blog-sat', label:'Sat', kind:'blog'},
+  ]},
+  { key:'vet', name:'IHWI Vet Cluster', cls:'ih', wkKey:'vetVidWeek', wkWord:'Week', slots:[
+    {id:'vet-gbp', label:'GBP', kind:'gbp'},
+    {id:'vet-reel', label:'Reel', kind:'reel'},
+    {id:'vet-car', label:'Carousel', kind:'carousel'},
+    {id:'vet-story', label:'Story', kind:'story'},
+    {id:'vet-short', label:'YouTube Short', kind:'reel'},
+  ]},
+  { key:'vetblogs', name:'IHWI Vet Cluster · Blogs', cls:'ih', wkKey:'vetWeek', wkWord:'Week', dynamic:true, dynamicKind:'blog', dynamicLabel:'Blog', slots:[] },
+  { key:'roh', name:'ROH', cls:'roh', wkKey:'cycPhase', wkWord:'Phase', slots:[
+    {id:'roh-lf', label:'Long-form (anchor)', kind:'video'},
+    {id:'roh-r1', label:'Reel 1', kind:'reel'},
+    {id:'roh-r2', label:'Reel 2', kind:'reel'},
+    {id:'roh-r3', label:'Reel 3', kind:'reel'},
+    {id:'roh-r4', label:'Reel 4', kind:'reel'},
+    {id:'roh-r5', label:'Reel 5', kind:'reel'},
+    {id:'roh-car', label:'Carousel', kind:'carousel'},
+    {id:'roh-static', label:'Static', kind:'static'},
+    {id:'roh-gbp', label:'GBP', kind:'gbp'},
+    {id:'roh-social', label:'Reddit / Nextdoor', kind:'social'},
+  ]},
+  { key:'rohblogs', name:'ROH · Blogs', cls:'roh', wkKey:'rohBlogPhase', wkWord:'Phase', dynamic:true, dynamicKind:'blog', dynamicLabel:'Blog', slots:[] },
+];
+/* kind → how it flows through prep / implementation / follow-up */
+const KIND = {
+  video:   { prep:'Film',         prepNote:'record + edit',          fanout:[['YouTube','Long-form video'],['Facebook','Native video'],['LinkedIn','Native video']], follow:'video' },
+  reel:    { prep:'Film',         prepNote:'record + edit',          fanout:[['Instagram','Reel'],['Facebook','Reel'],['YouTube','Short'],['TikTok','Short vertical video']] },
+  carousel:{ prep:'Design',       prepNote:'brand navy/gold slides', fanout:[['Instagram','Carousel'],['LinkedIn','Document/carousel post']] },
+  static:  { prep:'Design',       prepNote:'single graphic',         fanout:[['Instagram','Single-image feed post'],['Facebook','Feed text/photo post']] },
+  blog:    { prep:'Write / load', prepNote:'draft + load in CMS',    fanout:[['Website / CMS','Article'],['Facebook','External-link/blog post'],['LinkedIn','External-link/blog post'],['Instagram','Story'],['Google Business Profile','Resource/link update']], follow:'blog' },
+  gbp:     { prep:'',             prepNote:'',                       fanout:[['Google Business Profile','Update']] },
+  linkedin:{ prep:'',             prepNote:'',                       fanout:[['LinkedIn','Personal text/insight post']] },
+  social:  { prep:'',             prepNote:'',                       fanout:[['Reddit','Native discussion/question'],['Nextdoor','Neighborhood discussion/resource']] },
+  story:   { prep:'',             prepNote:'',                       fanout:[['Instagram','Story'],['Facebook','Story']] },
+};
+const KIND_LABEL = { video:'Video', reel:'Reel', carousel:'Carousel', static:'Static', blog:'Blog', gbp:'GBP', linkedin:'LinkedIn', social:'Reddit/Nextdoor', story:'Story' };
+const SLOT_LADDERS = {
+  "YouTube|Long-form video":{conf:"High",slots:[{p:1,d:"Sunday",t:"10:00 AM"},{p:2,d:"Tuesday",t:"9:00 AM"},{p:3,d:"Monday",t:"9:00 AM"},{p:4,d:"Friday",t:"12:00 PM"},{p:5,d:"Saturday",t:"12:00 PM"},{p:6,d:"Wednesday",t:"7:00 AM"},{p:7,d:"Thursday",t:"5:00 PM"}]},
+  "YouTube|Short":{conf:"High",slots:[{p:1,d:"Friday",t:"4:00 PM"},{p:2,d:"Saturday",t:"7:00 PM"},{p:3,d:"Thursday",t:"7:00 PM"},{p:4,d:"Sunday",t:"7:00 PM"},{p:5,d:"Wednesday",t:"7:00 PM"},{p:6,d:"Tuesday",t:"8:00 PM"},{p:7,d:"Monday",t:"8:00 PM"}]},
+  "YouTube|Community post":{conf:"Low",slots:[{p:1,d:"Tuesday",t:"9:00 AM"},{p:2,d:"Wednesday",t:"9:00 AM"},{p:3,d:"Thursday",t:"9:00 AM"},{p:4,d:"Sunday",t:"10:00 AM"},{p:5,d:"Friday",t:"12:00 PM"},{p:6,d:"Monday",t:"9:00 AM"},{p:7,d:"Saturday",t:"10:00 AM"}]},
+  "YouTube|Live stream":{conf:"Low",slots:[{p:1,d:"Sunday",t:"7:00 PM"},{p:2,d:"Thursday",t:"7:00 PM"},{p:3,d:"Tuesday",t:"7:00 PM"},{p:4,d:"Wednesday",t:"7:00 PM"},{p:5,d:"Friday",t:"6:00 PM"},{p:6,d:"Saturday",t:"7:00 PM"},{p:7,d:"Monday",t:"8:00 PM"}]},
+  "Facebook|Feed text/photo post":{conf:"High",slots:[{p:1,d:"Wednesday",t:"8:00 AM"},{p:2,d:"Thursday",t:"9:00 AM"},{p:3,d:"Tuesday",t:"8:00 AM"},{p:4,d:"Friday",t:"8:00 AM"},{p:5,d:"Sunday",t:"10:00 AM"},{p:6,d:"Monday",t:"9:00 PM"},{p:7,d:"Saturday",t:"10:00 PM"}]},
+  "Facebook|External-link/blog post":{conf:"Medium",slots:[{p:1,d:"Tuesday",t:"8:00 AM"},{p:2,d:"Wednesday",t:"8:00 AM"},{p:3,d:"Thursday",t:"9:00 AM"},{p:4,d:"Friday",t:"8:00 AM"},{p:5,d:"Sunday",t:"10:00 AM"},{p:6,d:"Monday",t:"9:00 PM"},{p:7,d:"Saturday",t:"10:00 PM"}]},
+  "Facebook|Reel":{conf:"Medium",slots:[{p:1,d:"Wednesday",t:"6:00 PM"},{p:2,d:"Thursday",t:"6:00 PM"},{p:3,d:"Tuesday",t:"7:00 PM"},{p:4,d:"Friday",t:"8:00 AM"},{p:5,d:"Sunday",t:"10:00 AM"},{p:6,d:"Monday",t:"9:00 PM"},{p:7,d:"Saturday",t:"10:00 PM"}]},
+  "Facebook|Native video":{conf:"Medium",slots:[{p:1,d:"Wednesday",t:"6:00 PM"},{p:2,d:"Thursday",t:"6:00 PM"},{p:3,d:"Tuesday",t:"7:00 PM"},{p:4,d:"Friday",t:"8:00 AM"},{p:5,d:"Sunday",t:"10:00 AM"},{p:6,d:"Monday",t:"9:00 PM"},{p:7,d:"Saturday",t:"10:00 PM"}]},
+  "Facebook|Story":{conf:"Low",slots:[{p:1,d:"Wednesday",t:"7:30 AM"},{p:2,d:"Thursday",t:"8:00 AM"},{p:3,d:"Tuesday",t:"7:30 AM"},{p:4,d:"Friday",t:"7:30 AM"},{p:5,d:"Sunday",t:"9:00 AM"},{p:6,d:"Monday",t:"8:00 AM"},{p:7,d:"Saturday",t:"9:00 AM"}]},
+  "Facebook|Live":{conf:"Low",slots:[{p:1,d:"Thursday",t:"7:00 PM"},{p:2,d:"Wednesday",t:"7:00 PM"},{p:3,d:"Tuesday",t:"7:00 PM"},{p:4,d:"Sunday",t:"7:00 PM"},{p:5,d:"Friday",t:"6:00 PM"},{p:6,d:"Saturday",t:"7:00 PM"},{p:7,d:"Monday",t:"8:00 PM"}]},
+  "Facebook|Group post":{conf:"Low",slots:[{p:1,d:"Tuesday",t:"8:00 AM"},{p:2,d:"Wednesday",t:"8:00 AM"},{p:3,d:"Thursday",t:"9:00 AM"},{p:4,d:"Sunday",t:"10:00 AM"},{p:5,d:"Friday",t:"8:00 AM"},{p:6,d:"Monday",t:"9:00 AM"},{p:7,d:"Saturday",t:"10:00 AM"}]},
+  "Instagram|Reel":{conf:"High",slots:[{p:1,d:"Wednesday",t:"6:00 PM"},{p:2,d:"Thursday",t:"7:00 PM"},{p:3,d:"Tuesday",t:"7:00 PM"},{p:4,d:"Monday",t:"7:00 PM"},{p:5,d:"Sunday",t:"9:00 PM"},{p:6,d:"Friday",t:"10:00 PM"},{p:7,d:"Saturday",t:"9:00 PM"}]},
+  "Instagram|Carousel":{conf:"High",slots:[{p:1,d:"Wednesday",t:"12:00 PM"},{p:2,d:"Thursday",t:"9:00 AM"},{p:3,d:"Tuesday",t:"7:00 PM"},{p:4,d:"Monday",t:"7:00 PM"},{p:5,d:"Sunday",t:"9:00 PM"},{p:6,d:"Friday",t:"10:00 PM"},{p:7,d:"Saturday",t:"9:00 PM"}]},
+  "Instagram|Single-image feed post":{conf:"High",slots:[{p:1,d:"Wednesday",t:"12:00 PM"},{p:2,d:"Thursday",t:"9:00 AM"},{p:3,d:"Tuesday",t:"7:00 PM"},{p:4,d:"Monday",t:"7:00 PM"},{p:5,d:"Sunday",t:"9:00 PM"},{p:6,d:"Friday",t:"10:00 PM"},{p:7,d:"Saturday",t:"9:00 PM"}]},
+  "Instagram|Story":{conf:"Low",slots:[{p:1,d:"Wednesday",t:"8:00 AM"},{p:2,d:"Thursday",t:"8:00 AM"},{p:3,d:"Tuesday",t:"8:00 AM"},{p:4,d:"Monday",t:"8:00 AM"},{p:5,d:"Sunday",t:"9:00 AM"},{p:6,d:"Friday",t:"8:00 AM"},{p:7,d:"Saturday",t:"9:00 AM"}]},
+  "Instagram|Live":{conf:"Low",slots:[{p:1,d:"Thursday",t:"7:00 PM"},{p:2,d:"Wednesday",t:"7:00 PM"},{p:3,d:"Tuesday",t:"7:00 PM"},{p:4,d:"Sunday",t:"7:00 PM"},{p:5,d:"Monday",t:"7:00 PM"},{p:6,d:"Friday",t:"8:00 PM"},{p:7,d:"Saturday",t:"8:00 PM"}]},
+  "LinkedIn|Personal text/insight post":{conf:"Medium",slots:[{p:1,d:"Wednesday",t:"4:00 PM"},{p:2,d:"Thursday",t:"5:00 PM"},{p:3,d:"Friday",t:"3:00 PM"},{p:4,d:"Tuesday",t:"4:00 PM"},{p:5,d:"Saturday",t:"9:00 AM"},{p:6,d:"Sunday",t:"10:00 PM"},{p:7,d:"Monday",t:"10:00 PM"}]},
+  "LinkedIn|Personal image post":{conf:"Medium",slots:[{p:1,d:"Wednesday",t:"4:00 PM"},{p:2,d:"Thursday",t:"5:00 PM"},{p:3,d:"Friday",t:"3:00 PM"},{p:4,d:"Tuesday",t:"4:00 PM"},{p:5,d:"Saturday",t:"9:00 AM"},{p:6,d:"Sunday",t:"10:00 PM"},{p:7,d:"Monday",t:"10:00 PM"}]},
+  "LinkedIn|Document/carousel post":{conf:"Medium",slots:[{p:1,d:"Wednesday",t:"4:00 PM"},{p:2,d:"Thursday",t:"5:00 PM"},{p:3,d:"Friday",t:"3:00 PM"},{p:4,d:"Tuesday",t:"4:00 PM"},{p:5,d:"Saturday",t:"9:00 AM"},{p:6,d:"Sunday",t:"10:00 PM"},{p:7,d:"Monday",t:"10:00 PM"}]},
+  "LinkedIn|Native video":{conf:"Medium",slots:[{p:1,d:"Wednesday",t:"4:00 PM"},{p:2,d:"Thursday",t:"5:00 PM"},{p:3,d:"Friday",t:"3:00 PM"},{p:4,d:"Tuesday",t:"4:00 PM"},{p:5,d:"Saturday",t:"9:00 AM"},{p:6,d:"Sunday",t:"10:00 PM"},{p:7,d:"Monday",t:"10:00 PM"}]},
+  "LinkedIn|External-link/blog post":{conf:"Medium",slots:[{p:1,d:"Wednesday",t:"1:00 PM"},{p:2,d:"Thursday",t:"1:00 PM"},{p:3,d:"Tuesday",t:"11:30 AM"},{p:4,d:"Friday",t:"11:00 AM"},{p:5,d:"Monday",t:"1:00 PM"},{p:6,d:"Saturday",t:"9:00 AM"},{p:7,d:"Sunday",t:"10:00 AM"}]},
+  "LinkedIn|Newsletter/article":{conf:"Medium",slots:[{p:1,d:"Tuesday",t:"11:00 AM"},{p:2,d:"Wednesday",t:"12:00 PM"},{p:3,d:"Thursday",t:"1:00 PM"},{p:4,d:"Friday",t:"11:00 AM"},{p:5,d:"Monday",t:"12:00 PM"},{p:6,d:"Saturday",t:"9:00 AM"},{p:7,d:"Sunday",t:"10:00 AM"}]},
+  "LinkedIn|Company Page post":{conf:"Medium",slots:[{p:1,d:"Wednesday",t:"1:00 PM"},{p:2,d:"Thursday",t:"1:00 PM"},{p:3,d:"Tuesday",t:"11:30 AM"},{p:4,d:"Friday",t:"11:00 AM"},{p:5,d:"Monday",t:"1:00 PM"},{p:6,d:"Saturday",t:"9:00 AM"},{p:7,d:"Sunday",t:"10:00 AM"}]},
+  "TikTok|Short vertical video":{conf:"High",slots:[{p:1,d:"Saturday",t:"5:00 PM"},{p:2,d:"Monday",t:"1:00 PM"},{p:3,d:"Sunday",t:"9:00 AM"},{p:4,d:"Friday",t:"6:00 PM"},{p:5,d:"Thursday",t:"1:00 PM"},{p:6,d:"Wednesday",t:"10:00 PM"},{p:7,d:"Tuesday",t:"6:00 AM"}]},
+  "TikTok|Longer educational video":{conf:"Medium",slots:[{p:1,d:"Saturday",t:"5:00 PM"},{p:2,d:"Monday",t:"1:00 PM"},{p:3,d:"Sunday",t:"9:00 AM"},{p:4,d:"Friday",t:"6:00 PM"},{p:5,d:"Thursday",t:"1:00 PM"},{p:6,d:"Wednesday",t:"10:00 PM"},{p:7,d:"Tuesday",t:"6:00 AM"}]},
+  "TikTok|Photo carousel":{conf:"Medium",slots:[{p:1,d:"Saturday",t:"5:00 PM"},{p:2,d:"Monday",t:"1:00 PM"},{p:3,d:"Sunday",t:"9:00 AM"},{p:4,d:"Friday",t:"6:00 PM"},{p:5,d:"Thursday",t:"1:00 PM"},{p:6,d:"Wednesday",t:"10:00 PM"},{p:7,d:"Tuesday",t:"6:00 AM"}]},
+  "TikTok|Story":{conf:"Low",slots:[{p:1,d:"Saturday",t:"5:00 PM"},{p:2,d:"Monday",t:"1:00 PM"},{p:3,d:"Sunday",t:"9:00 AM"},{p:4,d:"Friday",t:"6:00 PM"},{p:5,d:"Thursday",t:"1:00 PM"},{p:6,d:"Wednesday",t:"10:00 PM"},{p:7,d:"Tuesday",t:"6:00 AM"}]},
+  "TikTok|Live":{conf:"Low",slots:[{p:1,d:"Saturday",t:"8:00 PM"},{p:2,d:"Sunday",t:"7:00 PM"},{p:3,d:"Friday",t:"8:00 PM"},{p:4,d:"Thursday",t:"8:00 PM"},{p:5,d:"Wednesday",t:"8:00 PM"},{p:6,d:"Monday",t:"8:00 PM"},{p:7,d:"Tuesday",t:"8:00 PM"}]},
+  "Threads|Original text post":{conf:"High",slots:[{p:1,d:"Wednesday",t:"12:00 PM"},{p:2,d:"Thursday",t:"9:00 AM"},{p:3,d:"Tuesday",t:"10:00 AM"},{p:4,d:"Friday",t:"10:00 AM"},{p:5,d:"Sunday",t:"11:00 AM"},{p:6,d:"Monday",t:"12:00 PM"},{p:7,d:"Saturday",t:"10:00 AM"}]},
+  "Threads|Photo/video post":{conf:"Medium",slots:[{p:1,d:"Wednesday",t:"12:00 PM"},{p:2,d:"Thursday",t:"9:00 AM"},{p:3,d:"Tuesday",t:"10:00 AM"},{p:4,d:"Friday",t:"10:00 AM"},{p:5,d:"Sunday",t:"11:00 AM"},{p:6,d:"Monday",t:"12:00 PM"},{p:7,d:"Saturday",t:"10:00 AM"}]},
+  "Threads|Link post":{conf:"Medium",slots:[{p:1,d:"Wednesday",t:"12:00 PM"},{p:2,d:"Thursday",t:"9:00 AM"},{p:3,d:"Tuesday",t:"10:00 AM"},{p:4,d:"Friday",t:"10:00 AM"},{p:5,d:"Sunday",t:"11:00 AM"},{p:6,d:"Monday",t:"12:00 PM"},{p:7,d:"Saturday",t:"10:00 AM"}]},
+  "Threads|Reply/conversation activity":{conf:"Medium",slots:[{p:1,d:"Wednesday",t:"9:00 AM"},{p:2,d:"Thursday",t:"9:00 AM"},{p:3,d:"Tuesday",t:"10:00 AM"},{p:4,d:"Friday",t:"10:00 AM"},{p:5,d:"Monday",t:"12:00 PM"},{p:6,d:"Sunday",t:"11:00 AM"},{p:7,d:"Saturday",t:"10:00 AM"}]},
+  "Reddit|Native discussion/question":{conf:"Low",slots:[{p:1,d:"Tuesday",t:"8:00 AM"},{p:2,d:"Wednesday",t:"8:00 AM"},{p:3,d:"Thursday",t:"8:00 AM"},{p:4,d:"Sunday",t:"9:00 AM"},{p:5,d:"Monday",t:"8:00 AM"},{p:6,d:"Friday",t:"8:00 AM"},{p:7,d:"Saturday",t:"9:00 AM"}]},
+  "Reddit|Resource/link post":{conf:"Low",slots:[{p:1,d:"Tuesday",t:"8:00 AM"},{p:2,d:"Wednesday",t:"8:00 AM"},{p:3,d:"Thursday",t:"8:00 AM"},{p:4,d:"Sunday",t:"9:00 AM"},{p:5,d:"Monday",t:"8:00 AM"},{p:6,d:"Friday",t:"8:00 AM"},{p:7,d:"Saturday",t:"9:00 AM"}]},
+  "Reddit|Comment/reply":{conf:"Low",slots:[{p:1,d:"Tuesday",t:"7:00 PM"},{p:2,d:"Wednesday",t:"7:00 PM"},{p:3,d:"Thursday",t:"7:00 PM"},{p:4,d:"Sunday",t:"9:00 AM"},{p:5,d:"Monday",t:"7:00 PM"},{p:6,d:"Friday",t:"6:00 PM"},{p:7,d:"Saturday",t:"9:00 AM"}]},
+  "Reddit|Image/video post":{conf:"Low",slots:[{p:1,d:"Tuesday",t:"8:00 AM"},{p:2,d:"Wednesday",t:"8:00 AM"},{p:3,d:"Thursday",t:"8:00 AM"},{p:4,d:"Sunday",t:"9:00 AM"},{p:5,d:"Monday",t:"8:00 AM"},{p:6,d:"Friday",t:"8:00 AM"},{p:7,d:"Saturday",t:"9:00 AM"}]},
+  "Nextdoor|Business Page post":{conf:"Low",slots:[{p:1,d:"Tuesday",t:"7:30 AM"},{p:2,d:"Thursday",t:"7:30 AM"},{p:3,d:"Wednesday",t:"6:00 PM"},{p:4,d:"Saturday",t:"9:00 AM"},{p:5,d:"Monday",t:"6:00 PM"},{p:6,d:"Friday",t:"8:00 AM"},{p:7,d:"Sunday",t:"6:00 PM"}]},
+  "Nextdoor|Neighborhood discussion/resource":{conf:"Low",slots:[{p:1,d:"Tuesday",t:"7:30 AM"},{p:2,d:"Thursday",t:"7:30 AM"},{p:3,d:"Wednesday",t:"6:00 PM"},{p:4,d:"Saturday",t:"9:00 AM"},{p:5,d:"Monday",t:"6:00 PM"},{p:6,d:"Friday",t:"8:00 AM"},{p:7,d:"Sunday",t:"6:00 PM"}]},
+  "Nextdoor|Event post":{conf:"Low",slots:[{p:1,d:"Tuesday",t:"8:00 AM"},{p:2,d:"Wednesday",t:"8:00 AM"},{p:3,d:"Thursday",t:"8:00 AM"},{p:4,d:"Saturday",t:"9:00 AM"},{p:5,d:"Monday",t:"8:00 AM"},{p:6,d:"Friday",t:"8:00 AM"},{p:7,d:"Sunday",t:"6:00 PM"}]},
+  "Nextdoor|Poll/question":{conf:"Low",slots:[{p:1,d:"Tuesday",t:"7:30 AM"},{p:2,d:"Thursday",t:"7:30 AM"},{p:3,d:"Wednesday",t:"6:00 PM"},{p:4,d:"Saturday",t:"9:00 AM"},{p:5,d:"Monday",t:"6:00 PM"},{p:6,d:"Friday",t:"8:00 AM"},{p:7,d:"Sunday",t:"6:00 PM"}]},
+  "Nextdoor|Photo/video update":{conf:"Low",slots:[{p:1,d:"Wednesday",t:"6:00 PM"},{p:2,d:"Thursday",t:"6:00 PM"},{p:3,d:"Tuesday",t:"6:00 PM"},{p:4,d:"Saturday",t:"9:00 AM"},{p:5,d:"Monday",t:"6:00 PM"},{p:6,d:"Friday",t:"8:00 AM"},{p:7,d:"Sunday",t:"6:00 PM"}]},
+  "Google Business Profile|Update":{conf:"Low",slots:[{p:1,d:"Tuesday",t:"10:00 AM"},{p:2,d:"Thursday",t:"10:00 AM"},{p:3,d:"Wednesday",t:"10:00 AM"},{p:4,d:"Monday",t:"10:00 AM"},{p:5,d:"Friday",t:"10:00 AM"},{p:6,d:"Saturday",t:"9:00 AM"},{p:7,d:"Sunday",t:"9:00 AM"}]},
+  "Google Business Profile|Resource/link update":{conf:"Low",slots:[{p:1,d:"Tuesday",t:"10:00 AM"},{p:2,d:"Thursday",t:"10:00 AM"},{p:3,d:"Wednesday",t:"10:00 AM"},{p:4,d:"Monday",t:"10:00 AM"},{p:5,d:"Friday",t:"10:00 AM"},{p:6,d:"Saturday",t:"9:00 AM"},{p:7,d:"Sunday",t:"9:00 AM"}]},
+  "Google Business Profile|Event":{conf:"Low",slots:[{p:1,d:"Tuesday",t:"10:00 AM"},{p:2,d:"Thursday",t:"10:00 AM"},{p:3,d:"Monday",t:"10:00 AM"},{p:4,d:"Wednesday",t:"10:00 AM"},{p:5,d:"Friday",t:"10:00 AM"},{p:6,d:"Saturday",t:"9:00 AM"},{p:7,d:"Sunday",t:"9:00 AM"}]},
+  "Google Business Profile|Offer":{conf:"Low",slots:[{p:1,d:"Tuesday",t:"10:00 AM"},{p:2,d:"Thursday",t:"10:00 AM"},{p:3,d:"Monday",t:"10:00 AM"},{p:4,d:"Wednesday",t:"10:00 AM"},{p:5,d:"Friday",t:"10:00 AM"},{p:6,d:"Saturday",t:"9:00 AM"},{p:7,d:"Sunday",t:"9:00 AM"}]},
+  "Google Business Profile|Photo/video update":{conf:"Low",slots:[{p:1,d:"Thursday",t:"10:00 AM"},{p:2,d:"Tuesday",t:"10:00 AM"},{p:3,d:"Wednesday",t:"10:00 AM"},{p:4,d:"Friday",t:"10:00 AM"},{p:5,d:"Monday",t:"10:00 AM"},{p:6,d:"Saturday",t:"9:00 AM"},{p:7,d:"Sunday",t:"9:00 AM"}]}
+};
+/* ===== PRIORITY-SLOT ENGINE (meshes content rank x slot ladders) ===== */
+const DAYIDX={Monday:0,Tuesday:1,Wednesday:2,Thursday:3,Friday:4,Saturday:5,Sunday:6};
+const PLAT_COLOR={'YouTube':'#FF0000','Facebook':'#1877F2','Instagram':'#E4405F','LinkedIn':'#0A66C2','TikTok':'#111','Threads':'#111','Reddit':'#FF4500','Nextdoor':'#5Fab00','Google Business Profile':'#4285F4','Website / CMS':'#002850'};
+function platColor(p){return PLAT_COLOR[p]||'#667';}
+const PRIO_DEFAULT={video:90,reel:75,carousel:70,static:60,blog:100,gbp:60,linkedin:55,social:50,story:60};
+function prioFor(sl){const v=state[sl.id+'__prio'];return (v!==undefined&&v!==''&&!isNaN(v))?Number(v):(PRIO_DEFAULT[sl.kind]||60);}
+function schedulable(sl){ return !!idea(sl.id) && state[sl.id+'__st']!=='d'; }
+function ladderFor(plat,fmt){return SLOT_LADDERS[plat+'|'+fmt];}
+function mondayDateObj(){return new Date((state.weekOf||'2026-07-20')+'T00:00:00');}
+function dateForDay(day){const d=mondayDateObj();d.setDate(d.getDate()+(DAYIDX[day]||0));return d.toISOString().slice(0,10);}
+function to24(t){const m=String(t).trim().match(/(\d+):(\d+)\s*(AM|PM)/i);if(!m)return '09:00';let h=(+m[1])%12;if(/pm/i.test(m[3]))h+=12;return String(h).padStart(2,'0')+':'+m[2];}
+function fmtTime(hhmm){if(!hhmm)return '';return new Date('2000-01-01T'+hhmm+':00').toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}
+const WEBSITE_LADDER=[['Monday','06:00'],['Tuesday','06:00'],['Wednesday','06:00'],['Thursday','06:00'],['Friday','06:00'],['Saturday','07:00'],['Sunday','08:00']];
+let SCHED={};
+function buildSched(){
+  SCHED={};
+  const pools={};
+  BRANDS.forEach(brand=>tracksOf(brand).forEach(tr=>slotsFor(tr).forEach(sl=>{
+    if(!schedulable(sl))return;
+    requiredFanoutFor(sl).forEach(([plat,fmt])=>{
+      const key=brand.key+'|'+plat+'|'+fmt;
+      (pools[key]||(pools[key]=[])).push({prio:prioFor(sl),sl,plat,fmt,rid:scheduleRid(sl,plat)});
+    });
+  })));
+  Object.values(pools).forEach(arr=>{
+    arr.sort((a,b)=> b.prio-a.prio || nameFor(a.sl).localeCompare(nameFor(b.sl)));
+    arr.forEach((e,i)=>{
+      if(e.plat==='Website / CMS'){const wl=WEBSITE_LADDER[Math.min(i,6)];SCHED[e.rid]={date:dateForDay(wl[0]),time:wl[1],pslot:'PUB',conf:'na',over:false};return;}
+      const lad=ladderFor(e.plat,e.fmt);
+      if(!lad){SCHED[e.rid]={date:'',time:'',pslot:'-',conf:'',over:false};return;}
+      const s=lad.slots[Math.min(i,lad.slots.length-1)];
+      SCHED[e.rid]={date:dateForDay(s.d),time:to24(s.t),pslot:'P'+s.p,conf:(lad.conf||'').toLowerCase(),over:i>=lad.slots.length};
+    });
+  });
+}
+function confCls(c){c=(c||'').toLowerCase();return c==='high'?'hi':c==='medium'?'me':c==='low'?'lo':'na';}
+function confDot(c){return '<i class="confdot '+confCls(c)+'"></i>';}
+
+const TIER_LABEL = { a:'A · Full launch', b:'B · Selective', c:'C · Library/support' };
+function defaultTierFor(sl){
+  if(sl.kind==='video') return 'a';
+  if(sl.kind==='reel'||sl.kind==='carousel'||sl.kind==='linkedin') return 'b';
+  return 'c';
+}
+function tierFor(sl){ return state[sl.id+'__tier'] || defaultTierFor(sl); }
+function tierHtml(sl){
+  const cur=tierFor(sl);
+  return `<div class="tier" data-tier="${sl.id}" title="A = full launch · B = selective distribution · C = library/support">
+    ${['a','b','c'].map(v=>`<button class="tierbtn ${v} ${cur===v?'on':''}" data-v="${v}" title="${TIER_LABEL[v]}">${v.toUpperCase()}</button>`).join('')}
+  </div>`;
+}
+function fanoutFor(sl){
+  const k=KIND[sl.kind]; if(!k) return [];
+  const tier=tierFor(sl), all=k.fanout;
+  if(tier==='a') return all;
+  const keepB={
+    video:['YouTube','Facebook','LinkedIn'],
+    reel:['Instagram','Facebook','YouTube','TikTok'],
+    carousel:['Instagram','LinkedIn'],
+    static:['Instagram','Facebook'],
+    blog:['Website / CMS','Facebook','Instagram','Google Business Profile','LinkedIn','Threads'],
+    gbp:['Google Business Profile'], linkedin:['LinkedIn'], social:['Reddit','Nextdoor'], story:['Instagram']
+  };
+  const keepC={
+    video:['YouTube'], reel:['Instagram','YouTube'], carousel:['Instagram'], static:['Instagram'], blog:['Website / CMS'],
+    gbp:['Google Business Profile'], linkedin:['LinkedIn'], social:['Reddit','Nextdoor'], story:['Instagram']
+  };
+  const keep=(tier==='b'?keepB:keepC)[sl.kind]||[];
+  return all.filter(([plat])=>keep.includes(plat));
+}
+/* ---------------- Destination model: Required / Optional / Off ----------------
+   Only REQUIRED destinations go on the weekly execution board. Tier sets the
+   default required set; the rest are OPTIONAL (available, never counted) or OFF. */
+const BLOG_PROMO_PRIORITY = ['Facebook','Google Business Profile','Instagram','LinkedIn','Threads','Nextdoor','Reddit'];
+function tierPromoCount(sl){ const tr=tierFor(sl); return tr==='a'?3:(tr==='b'?1:0); }
+function defaultDestState(sl,plat){
+  const k=KIND[sl.kind]; if(!k) return 'off';
+  if(sl.kind==='blog'){
+    if(plat==='Website / CMS') return 'req';                 // the article itself is always required
+    const order=BLOG_PROMO_PRIORITY.filter(p=>k.fanout.some(([pl])=>pl===p));
+    const idx=order.indexOf(plat), n=tierPromoCount(sl);
+    return (idx>-1 && idx<n) ? 'req' : 'opt';                // top-N promo required by tier; rest optional
+  }
+  return fanoutFor(sl).map(([p])=>p).includes(plat) ? 'req' : 'opt';  // non-blogs: tier fan-out = required
+}
+function destKey(sl,plat){ return sl.id+'__dest__'+plat.replace(/[^a-z]/gi,''); }
+function destState(sl,plat){ const v=state[destKey(sl,plat)]; return (v==='req'||v==='opt'||v==='off')?v:defaultDestState(sl,plat); }
+function requiredFanoutFor(sl){ const k=KIND[sl.kind]; return k?k.fanout.slice():[]; }
+function destChips(sl){
+  const k=KIND[sl.kind]; if(!k) return '';
+  let h='<span class="desthint">Only <b>Required</b> destinations go on the weekly board. Optional stay available and never count as unfinished.</span>';
+  h+=k.fanout.map(([plat,type])=>{
+    const locked=(sl.kind==='blog'&&plat==='Website / CMS');
+    const st=locked?'req':destState(sl,plat);
+    const label=st==='req'?'REQUIRED':(st==='opt'?'OPTIONAL':'OFF');
+    return `<button class="destchip ${st} ${locked?'locked':''}" ${locked?'':`data-dest="${sl.id}|${plat}" data-destkind="${sl.kind}"`} title="${esc(type)}${locked?' · always published':''}">${esc(plat)} <em>${label}</em></button>`;
+  }).join('');
+  return h;
+}
+/* two brands — kept visually separate in every phase */
+const BRANDS = [ {key:'ih', name:'Integrity Homes'}, {key:'roh', name:'Reward Our Heroes'} ];
+function brandHead(brand){ return `<div class="brandhead ${brand.key}"><span class="bh-label">${esc(brand.name)}</span><span class="bh-line"></span></div>`; }
+function tracksOf(brand){ return TRACKS.filter(tr=>tr.cls===brand.key); }
+/* ---------------- State ---------------- */
+let state = {};
+const KEY = 'wcp_wk_0720_4phase';
+const SCHEDULE_VERSION = 'priority-slot-engine-v1';
+function load(){ try{ const r=localStorage.getItem(KEY); if(r) state=JSON.parse(r); }catch(e){ state={}; } }
+let t=null;
+function save(){ clearTimeout(t); t=setTimeout(()=>{ try{ localStorage.setItem(KEY, JSON.stringify(state)); note('Saved ✓'); }catch(e){ note('Working — use Print to keep a copy'); } },250); }
+function note(m){ const n=document.getElementById('saveNote'); if(n) n.textContent=m; }
+function esc(s){ return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function fmtWeekOf(v){
+  if(!v) return 'Week of —';
+  const d = new Date(v+'T00:00:00');
+  if(isNaN(d)) return 'Week of —';
+  return 'Week of '+d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+}
+function syncTitleWeekOf(){ document.getElementById('titleWeekOf').textContent = fmtWeekOf(state.weekOf); }
+function idea(id){ return state[id+'__idea'] || ''; }
+function nameFor(slot){ return idea(slot.id) || slot.label; }
+function wkOf(tr){ const v = state[tr.wkKey]; return v ? (tr.wkWord+' '+v) : tr.wkWord+' —'; }
+function slotsFor(tr){
+  if(!tr.dynamic) return tr.slots;
+  const ids = state[tr.key+'__ids'] || [];
+  return ids.map((id,i)=>({id: tr.key+'-'+id, label:(tr.dynamicLabel||'Item')+' '+(i+1), kind:tr.dynamicKind, __dynId:id}));
+}
+function addDynSlot(tr){
+  const ids = state[tr.key+'__ids'] || [];
+  ids.push(Date.now()+''+Math.floor(Math.random()*1000));
+  state[tr.key+'__ids'] = ids; save();
+}
+function removeDynSlot(tr, dynId){
+  const ids = (state[tr.key+'__ids'] || []).filter(id=>id!==dynId);
+  state[tr.key+'__ids'] = ids;
+  const prefix = tr.key+'-'+dynId;
+  Object.keys(state).forEach(k=>{ if(k.startsWith(prefix)) delete state[k]; });
+  save();
+}
+/* status control (shared) */
+function statusHtml(id){
+  return `<div class="status" data-status="${id}">
+    <button class="st t" data-v="t" title="To-do">T</button>
+    <button class="st s" data-v="s" title="Scheduled">S</button>
+    <button class="st d" data-v="d" title="Done">D</button></div>`;
+}
+/* ---------------- PLAN tab ---------------- */
+function renderPlan(){
+  const V=document.getElementById('view-plan');
+  ensureScheduleDefaults();
+  let html=`<div class="derived-note"><b>Rank each piece — that's the whole job.</b> Higher priority claims the hotter slot (P1) on every platform the piece goes to. <b>Blogs are auto-scored from live Semrush</b> (⚡ — edit if you disagree); videos, reels and the rest are your call (★). The exact day &amp; time each piece lands shows to the right, and on Schedule + the Placement Map.</div>`;
+  BRANDS.forEach(brand=>{
+    html+=brandHead(brand);
+    tracksOf(brand).forEach(tr=>{
+      let h=`<div class="panel${state['plan-'+tr.key+'__collapsed']?' collapsed':''}${tr.key==='marketB'?' skiptrack':''}"><div class="vtab ${tr.cls}">${esc(tr.name)}</div><div class="pbody">
+        <div class="phead ${tr.cls}" data-collapse="plan-${tr.key}"><h2>${esc(tr.name)} · ${esc(wkOf(tr))}</h2><span class="chev">▾</span></div>`;
+      slotsFor(tr).forEach(sl=>{
+        const rm = tr.dynamic ? `<button class="rmdyn" data-rmtrack="${tr.key}" data-rmid="${sl.__dynId}" title="Remove">✕</button>` : '';
+        const isBlog=sl.kind==='blog';
+        h+=`<div class="row" data-row="${sl.id}">
+          <div class="rlabel">${esc(sl.label)}<span class="kind">${KIND_LABEL[sl.kind]||sl.kind}</span></div>
+          <input class="idea" data-k="${sl.id}__idea" placeholder="Idea / title…" value="${esc(idea(sl.id))}">
+          <span class="prio ${isBlog?'semrush':''}" title="${isBlog?'Semrush value score — higher wins the hotter slot':'Priority — higher wins the hotter slot'}"><span class="priolab">${isBlog?'⚡':'★'}</span><input class="prioinput" type="number" data-prio="${sl.id}" value="${prioFor(sl)}" min="0" step="1"></span>
+          <span class="planhint">${esc(planHint(sl))}</span>
+          ${statusHtml(sl.id)}${rm}</div>`;
+      });
+      if(tr.dynamic){ h+=`<div class="row adddyn-row"><button class="adddyn" data-addtrack="${tr.key}">+ Add ${esc(tr.dynamicLabel||'item')}</button></div>`; }
+      h+=`</div></div>`;
+      html+=h;
+    });
+  });
+  V.innerHTML=html; bindPlan();
+}
+function planHint(sl){
+  const fo=requiredFanoutFor(sl); if(!fo.length) return '';
+  let best=null;
+  fo.forEach(([plat])=>{ const s=SCHED[scheduleRid(sl,plat)]; if(s&&s.date){ const k=s.date+s.time; if(!best||k<best.k) best={k,rid:scheduleRid(sl,plat)}; } });
+  if(!best) return '';
+  return '→ '+fmtSchedule(best.rid)+(fo.length>1?(' +'+(fo.length-1)+' more'):'');
+}
+/* ---------------- PREP tab (auto-derived) ---------------- */
+function renderPrep(){
+  const V=document.getElementById('view-prep');
+  const cats=[['Film','🎬'],['Design','🎨'],['Write / load','📝']];
+  let html=`<div class="derived-note">Auto-built from the Plan. Every asset that has to be produced before it can go out, grouped by what you do to it. Fill an idea in Plan and it shows up here.</div>`;
+  let any=false;
+  BRANDS.forEach(brand=>{
+    let brandHtml='';
+    cats.forEach(([cat,icon])=>{
+      let rows='';
+      tracksOf(brand).forEach(tr=>slotsFor(tr).forEach(sl=>{
+        const k=KIND[sl.kind]; if(!k||k.prep!==cat) return;
+        const pid=sl.id+'__prep';
+        const planned = idea(sl.id);
+        const title = planned ? `<b>${esc(planned)}</b>` : `<span style="color:#B6BDC7;">(${esc(sl.label)} — add in Plan)</span>`;
+        rows+=`<div class="row" data-row="${pid}">
+          <div class="rlabel">${esc(tr.name)}<span class="kind">${esc(sl.label)} · ${esc(k.prepNote)}</span></div>
+          <div class="fu-note">${title}</div>
+          ${statusHtml(pid)}</div>`;
+      }));
+      if(rows) brandHtml+=`<div class="gcard ${brand.key}"><div class="gcard-hd">${icon} ${cat}</div>${rows}</div>`;
+    });
+    if(brandHtml){ html+=brandHead(brand)+brandHtml; any=true; }
+  });
+  if(!any) html+=`<div class="gcard"><div class="empty-hint">Nothing to prep yet — add ideas on the Plan tab.</div></div>`;
+  V.innerHTML=html; bindDerived(V);
+}
+/* ---------------- SCHEDULE tab (auto-derived recommendations + spacing checks) ---------------- */
+const SPACING_HOURS = { 'Website / CMS':0, 'Facebook':3, 'Instagram':4, 'LinkedIn':18, 'YouTube':6, 'Reddit':24, 'Nextdoor':120, 'Threads':2, 'TikTok':3, 'Google Business Profile':48 };
+const SLOT_PATTERNS = {
+  'Website / CMS':[{d:0,t:'06:00'}],
+  'Facebook':[{d:0,t:'09:00'},{d:1,t:'13:00'},{d:2,t:'09:00'},{d:3,t:'13:00'},{d:4,t:'09:00'},{d:3,t:'18:30'}],
+  'Instagram':[{d:0,t:'19:00'},{d:1,t:'18:00'},{d:2,t:'12:00'},{d:3,t:'09:00'},{d:6,t:'21:00'}],
+  'LinkedIn':[{d:0,t:'11:30'},{d:2,t:'13:00'},{d:3,t:'15:00'},{d:1,t:'08:00'},{d:4,t:'12:00'}],
+  'Threads':[{d:1,t:'10:00'},{d:2,t:'12:00'},{d:3,t:'09:00'},{d:4,t:'10:00'}],
+  'TikTok':[{d:1,t:'18:00'},{d:3,t:'19:00'},{d:4,t:'19:00'},{d:5,t:'19:00'}],
+  // Low-frequency community channels have one routine slot in this weekly board.
+  // Extra placements stay unscheduled for a decision; they never roll into another week.
+  'Reddit':[{d:2,t:'08:00'}],
+  'Nextdoor':[{d:5,t:'09:00'}],
+  'Google Business Profile':[{d:1,t:'10:00'},{d:3,t:'10:00'},{d:0,t:'14:00'},{d:2,t:'14:00'},{d:4,t:'14:00'}]
+};
+function mondayDate(){ const raw=state.weekOf||'2026-07-20'; return new Date(raw+'T00:00:00'); }
+function datePlus(days){ const d=mondayDate(); d.setDate(d.getDate()+days); return d.toISOString().slice(0,10); }
+const LOW_CADENCE = new Set(['Reddit','Nextdoor']); // genuine weekly caps — extras stay a decision
+function spreadSlot(index){ const t=['08:00','12:00','15:00','18:00','10:00','13:00','19:00']; return {d:index%7, t:t[index%t.length]}; }
+function recommendationReason(plat,type){
+  if(plat==='Website / CMS') return 'Original publication — paste the live article URL after publishing';
+  if(plat==='YouTube'&&type==='Long-form') return 'Anchor launch; morning slot';
+  if(plat==='YouTube') return 'Short-form evening window';
+  if(plat==='Reddit') return 'Choose the subreddit first; link only when its rules allow';
+  if(plat==='Nextdoor') return 'Choose relevant neighborhoods; do not syndicate every blog';
+  if(plat==='Google Business Profile') return 'Update with a Learn More button linked to the article';
+  if(plat==='LinkedIn') return 'Native summary first; article link included with the post';
+  if(plat==='Threads') return 'Start with the useful thought; add the link naturally';
+  if(plat==='TikTok') return 'Afternoon/evening discovery window';
+  if(plat==='Instagram') return type.includes('Story')?'Use a direct link sticker; stable bio hub is backup only':'Strong IG test window';
+  return 'Strong starting test window';
+}
+function blogDayOffset(sl){
+  const map={'blog-mon':0,'blog-tue':1,'blog-wed':2,'blog-thu':3,'blog-fri':4,'blog-sat':5};
+  return Object.prototype.hasOwnProperty.call(map,sl.id)?map[sl.id]:null;
+}
+function accountName(brand,plat){
+  if(plat==='Website / CMS') return brand.key==='roh'?'RewardOurHeroes.com':'IntegrityHomesWI.com';
+  if(plat==='Facebook') return brand.key==='roh'?'Reward Our Heroes Facebook Page':'Integrity Homes Facebook Page';
+  if(plat==='Instagram') return brand.key==='roh'?'Reward Our Heroes Instagram':'Integrity Homes Instagram';
+  if(plat==='YouTube') return brand.key==='roh'?'Reward Our Heroes YouTube channel':'Integrity Homes YouTube channel';
+  if(plat==='TikTok') return brand.key==='roh'?'Reward Our Heroes TikTok account':'Integrity Homes TikTok account';
+  if(plat==='Google Business Profile') return brand.key==='roh'?'Reward Our Heroes Google Business Profile':'Integrity Homes Google Business Profile';
+  if(plat==='LinkedIn') return brand.key==='roh'?'Reward Our Heroes LinkedIn Page':'John Reuter LinkedIn personal profile';
+  if(plat==='Threads') return brand.key==='roh'?'Reward Our Heroes Threads profile':'John Reuter Threads profile';
+  if(plat==='Reddit') return 'Specific subreddit — select before scheduling';
+  if(plat==='Nextdoor') return brand.key==='roh'?'Reward Our Heroes organization page · relevant Wisconsin neighborhoods':'Integrity Homes Business Page · relevant neighborhoods';
+  return brand.name;
+}
+function exactPlacement(e){
+  const account=accountName(e.brand,e.plat);
+  if(e.plat==='Website / CMS') return account+' · Blog/CMS article';
+  if(e.plat==='Instagram'&&e.sl.kind==='blog') return account+' · Story · Direct link sticker';
+  if(e.plat==='Facebook'&&e.sl.kind==='blog') return account+' · Shared-link post';
+  if(e.plat==='Google Business Profile'&&e.sl.kind==='blog') return account+' · Update · Learn More button';
+  if(e.plat==='LinkedIn'&&e.sl.kind==='blog') return account+' · Native summary + article link';
+  if(e.plat==='Threads'&&e.sl.kind==='blog') return account+' · Native discussion + article link';
+  if(e.plat==='Reddit'&&e.sl.kind==='blog') return account+' · Native resource post; link only if permitted';
+  if(e.plat==='Nextdoor'&&e.sl.kind==='blog') return account+' · Hyperlocal resource post';
+  return account+' · '+e.type;
+}
+function recommendedFor(sl,tr,plat,type,index){
+  // Everything in this Schedule tab belongs to the selected Monday-Sunday week.
+  // If the recommended weekly capacity is full, return null so the placement
+  // appears under “Unscheduled this week” instead of leaking into a future week.
+  if(plat==='Website / CMS'){
+    const assigned=blogDayOffset(sl);
+    if(assigned!==null) return {d:assigned,t:'06:00'};
+    return {d:0,t:'06:00'};
+  }
+  if(plat==='YouTube'&&type==='Long-form'){
+    if(index>0) return null;
+    return tr.cls==='roh'?{d:1,t:'09:00'}:{d:6,t:'10:00'};
+  }
+  if(plat==='YouTube'){
+    const a=[{d:3,t:'19:00'},{d:4,t:'17:00'},{d:5,t:'19:00'}];
+    return index<a.length?a[index]:spreadSlot(index);
+  }
+  const a=SLOT_PATTERNS[plat]||[{d:0,t:'10:00'}];
+  if(index<a.length) return a[index];
+  return LOW_CADENCE.has(plat) ? null : spreadSlot(index);
+}
+function scheduleRid(sl,plat){ return sl.id+'__'+plat.replace(/[^a-z]/gi,''); }
+function withinSelectedWeek(dateStr){
+  return !!dateStr && dateStr>=datePlus(0) && dateStr<=datePlus(6);
+}
+function ensureScheduleDefaults(){
+  buildSched();
+  const entries=[];
+  BRANDS.forEach(brand=>tracksOf(brand).forEach(tr=>slotsFor(tr).forEach(sl=>{
+    if(!schedulable(sl)) return;
+    requiredFanoutFor(sl).forEach(([plat,type])=>{ entries.push({brand,tr,sl,plat,type,rid:scheduleRid(sl,plat)}); });
+  })));
+  return entries;
+}
+function toLocalDateTime(d){
+  const pad=n=>String(n).padStart(2,'0');
+  return {date:d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()), time:pad(d.getHours())+':'+pad(d.getMinutes())};
+}
+function nextPreferredSlot(e, after){
+  const candidates=[];
+  if(e.plat==='YouTube'&&e.type==='Long-form'){
+    const base=e.tr.cls==='roh'?{d:1,t:'09:00'}:{d:6,t:'10:00'};
+    candidates.push(base);
+  }else{
+    const pats=e.plat==='YouTube'?[{d:3,t:'19:00'},{d:4,t:'17:00'},{d:5,t:'19:00'}]:(SLOT_PATTERNS[e.plat]||[{d:0,t:'10:00'}]);
+    pats.forEach(p=>candidates.push(p));
+  }
+  const base=mondayDate();
+  for(const c of candidates){
+    const d=new Date(base); d.setDate(d.getDate()+c.d);
+    const [hh,mm]=c.t.split(':').map(Number); d.setHours(hh,mm,0,0);
+    if(d>=after && d<=new Date(datePlus(6)+'T23:59:59')) return d;
+  }
+  return null;
+}
+function autoSpaceSchedule(){ return false; }
+function dtOf(e){ const s=SCHED[e.rid]; return s&&s.date?new Date(s.date+'T'+s.time+':00'):null; }
+function spacingMap(entries){
+  const out={};
+  const groups={}; entries.forEach(e=>{ const k=e.brand.key+'|'+e.plat; (groups[k]||(groups[k]=[])).push(e); });
+  Object.values(groups).forEach(arr=>{
+    arr.sort((a,b)=>(dtOf(a)||0)-(dtOf(b)||0));
+    arr.forEach((e,i)=>{
+      let nearest=Infinity;
+      [arr[i-1],arr[i+1]].filter(Boolean).forEach(n=>{ const a=dtOf(e),b=dtOf(n); if(a&&b) nearest=Math.min(nearest,Math.abs(a-b)/36e5); });
+      const min=SPACING_HOURS[e.plat] ?? 3;
+      out[e.rid]={ok:nearest===Infinity||nearest>=min, nearest, min};
+    });
+  });
+  return out;
+}
+function fmtSchedule(rid){
+  const s=SCHED[rid]; if(!s||!s.date) return 'unscheduled';
+  const dt=new Date(s.date+'T'+s.time+':00'); return dt.toLocaleDateString('en-US',{weekday:'short',month:'numeric',day:'numeric'})+' '+dt.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+}
+const PUBLISH_STATUS = {
+  todo:'To do',
+  ready:'Ready',
+  scheduled:'Scheduled',
+  published:'Published',
+  skipped:'Skipped'
+};
+function publishStatus(e){
+  const saved=state[e.rid+'__pubStatus'];
+  if(saved&&PUBLISH_STATUS[saved]) return saved;
+  if(state[e.rid+'__posted']) return 'published';
+  if(e.sl && state[e.sl.id+'__st']==='d') return 'published';
+  return 'todo';
+}
+function isFinishedStatus(v){ return v==='published'||v==='skipped'; }
+function setPublishStatus(e,v){
+  state[e.rid+'__pubStatus']=v;
+  state[e.rid+'__posted']=(v==='published');
+}
+function dateLabel(dateStr){
+  const dt=new Date(dateStr+'T12:00:00');
+  return {
+    weekday:dt.toLocaleDateString('en-US',{weekday:'long'}),
+    date:dt.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})
+  };
+}
+function dayKey(dateStr){ return 'sched-day-'+dateStr; }
+function assetDayKey(dateStr,sl){ return 'sched-asset-'+dateStr+'-'+sl.id; }
+function statusOptions(cur){
+  return Object.entries(PUBLISH_STATUS).map(([v,label])=>`<option value="${v}" ${cur===v?'selected':''}>${label}</option>`).join('');
+}
+function renderSchedule(){
+  const V=document.getElementById('view-sched');
+  const entries=ensureScheduleDefaults();
+  let html=`<div class="derived-note"><b>Auto-scheduled from your Priority Slots.</b> Every piece is filed into its platform's best open slot (P1 = hottest window) based on the priority you set in Plan — blogs by live Semrush score, videos &amp; shorts by your call. Integrity Homes and Reward Our Heroes schedule on separate accounts. Change a priority in Plan and this re-files instantly. Times are Central; dots show evidence strength behind each slot.</div>
+  <div class="schedule-key"><span class="k-p">P1 = hottest slot</span><span><i class="confdot hi"></i>High evidence</span><span><i class="confdot me"></i>Medium</span><span><i class="confdot lo"></i>Low — refine w/ your analytics</span></div>`;
+  if(!entries.length){ V.innerHTML=html+`<div class="gcard"><div class="empty-hint">Nothing to schedule yet — add ideas on the Plan tab.</div></div>`; return; }
+  const byDate={};
+  entries.forEach(e=>{ const s=SCHED[e.rid]; if(!s||!s.date) return; (byDate[s.date]||(byDate[s.date]=[])).push(e); });
+  const dates=Object.keys(byDate).sort();
+  html+=`<div class="schedule-board">`;
+  dates.forEach(dateStr=>{
+    const dayEntries=byDate[dateStr].slice().sort((a,b)=>(SCHED[a.rid].time||'').localeCompare(SCHED[b.rid].time||''));
+    const dl=dateLabel(dateStr);
+    const finished=dayEntries.filter(e=>isFinishedStatus(publishStatus(e))).length;
+    html+=`<section class="day-block ${finished===dayEntries.length?'complete':''}"><div class="day-head"><div class="day-title"><h2>${esc(dl.weekday)}</h2><span class="day-date">${esc(dl.date)}</span></div><div class="day-actions"><span class="day-progress">${finished} of ${dayEntries.length} done</span><button class="day-action" data-daystatus="published" data-daydate="${dateStr}">Mark day published</button></div></div><div class="day-body sched-rows">`;
+    dayEntries.forEach(e=>{
+      const s=SCHED[e.rid], cur=publishStatus(e);
+      html+=`<div class="sched-row ${e.plat==='Website / CMS'?'primary-destination':''}">
+        <span class="sched-time">${esc(fmtTime(s.time))}</span>
+        <span class="sched-plat"><span class="pchip" style="background:${platColor(e.plat)}">${esc(e.plat)}</span></span>
+        <span class="sched-what"><span class="brand-chip ${e.brand.key}">${e.brand.key==='roh'?'ROH':'IH'}</span> ${esc(nameFor(e.sl))} <small>${esc(exactPlacement(e))}</small></span>
+        <span class="sched-slot"><span class="pslotbadge">${esc(s.pslot)}</span> ${confDot(s.conf)}</span>
+        <select class="pubstatus ${cur}" aria-label="Publishing status" data-pubrid="${esc(e.rid)}">${statusOptions(cur)}</select>
+      </div>`;
+    });
+    html+=`</div></section>`;
+  });
+  html+=`</div>`;
+  V.innerHTML=html;
+  V.querySelectorAll('select[data-pubrid]').forEach(sel=>sel.addEventListener('change',ev=>{ const entry=entries.find(x=>x.rid===ev.target.dataset.pubrid); if(!entry) return; setPublishStatus(entry,ev.target.value); save(); renderSchedule(); }));
+  V.querySelectorAll('[data-daystatus]').forEach(btn=>btn.addEventListener('click',()=>{ const d=btn.dataset.daydate; entries.filter(e=>SCHED[e.rid]&&SCHED[e.rid].date===d).forEach(e=>setPublishStatus(e,'published')); save(); renderSchedule(); }));
+}
+/* ---------------- PLACEMENT MAP tab (asset-first: one card = one asset, all its placements) ---------------- */
+function renderMap(){
+  const V=document.getElementById('view-map');
+  ensureScheduleDefaults();
+  let html=`<div class="derived-note">Asset-first readout: each card is one asset and lists <b>every place it goes</b> — platform, exact account, day/time, and status — top to bottom. Set destinations with the 🎯 button on the Plan tab. Use Print to hand this to the team.</div><div class="map-actions"><button class="btn" id="mapPrint">🖨 Print / Save PDF</button></div>`;
+  let any=false;
+  BRANDS.forEach(brand=>{
+    let cards='';
+    tracksOf(brand).forEach(tr=>slotsFor(tr).forEach(sl=>{
+      if(!idea(sl.id)) return;
+      const req=requiredFanoutFor(sl); if(!req.length) return;
+      any=true;
+      const entries=req.map(([plat,type])=>({brand,tr,sl,plat,type,rid:scheduleRid(sl,plat)}));
+      entries.sort((a,b)=>{
+        const da=(state[a.rid+'__schedDate']||'zzz')+(state[a.rid+'__schedTime']||''), db=(state[b.rid+'__schedDate']||'zzz')+(state[b.rid+'__schedTime']||'');
+        return da.localeCompare(db);
+      });
+      const finished=entries.filter(e=>isFinishedStatus(publishStatus(e))).length;
+      let rows='';
+      entries.forEach(e=>{
+        const cur=publishStatus(e), web=e.plat==='Website / CMS';
+        const _w=fmtSchedule(e.rid); const when=(_w==='unscheduled'&&cur==='published')?'Posted':_w;
+        rows+=`<div class="map-row ${cur==='published'?'pub':''}">
+          <span class="map-when ${web?'web':''}">${esc(when)}</span>
+          <span class="map-plat"><b>${esc(e.plat)}</b><small>${esc(exactPlacement(e))}</small></span>
+          <span class="map-status ${cur}">${esc(PUBLISH_STATUS[cur]||cur)}</span>
+        </div>`;
+      });
+      cards+=`<div class="map-card ${finished===entries.length?'complete':''}">
+        <div class="map-head"><span class="priobadge">★ ${prioFor(sl)}</span><div class="map-copy"><div class="map-title">${esc(nameFor(sl))}</div><div class="map-sub"><span class="brand-chip ${brand.key}">${esc(brand.name)}</span><span>${esc(tr.name)}</span><span>${entries.length} placement${entries.length===1?'':'s'}</span><span>${finished}/${entries.length} done</span></div></div></div>
+        <div class="map-body">${rows}</div></div>`;
+    }));
+    if(cards){ html+=brandHead(brand)+cards; }
+  });
+  if(!any) html+=`<div class="gcard"><div class="empty-hint">Nothing planned yet — add ideas on the Plan tab.</div></div>`;
+  V.innerHTML=html;
+  const pb=V.querySelector('#mapPrint'); if(pb) pb.addEventListener('click',()=>window.print());
+}
+/* ---------------- IMPLEMENTATION tab (asset-first, platform toggle buttons, links reveal below) ---------------- */
+const PLATFORM_ABBR = { 'Website / CMS':'WEB','YouTube':'YT','Facebook':'FB','Instagram':'IG','TikTok':'TT','LinkedIn':'LI','Threads':'TH',
+  'Google Business Profile':'GBP','Reddit':'RD','Nextdoor':'ND' };
+function renderImpl(){
+  const V=document.getElementById('view-impl');
+  ensureScheduleDefaults();
+  let html=`<div class="derived-note">Click a platform once it's posted. Its link field appears in the Links section below so the team can paste the URL.</div>`;
+  let any=false;
+  BRANDS.forEach(brand=>{
+    let assetCards='', linkSections='';
+    tracksOf(brand).forEach(tr=>{
+      let rows='';
+      const slots = slotsFor(tr);
+      slots.forEach(sl=>{
+        const k=KIND[sl.kind], fanout=requiredFanoutFor(sl); if(!k || !fanout.length) return;
+        any=true;
+        const btns = fanout.map(([plat,type])=>{
+          const rid=sl.id+'__'+plat.replace(/[^a-z]/gi,'');
+          const abbr = PLATFORM_ABBR[plat] || plat.slice(0,2).toUpperCase();
+          const on = state[rid+'__posted'] ? 'on' : '';
+          const entry={brand,tr,sl,plat,type,rid};
+          return `<button class="platbtn ${on}" data-plat="${rid}" title="${esc(exactPlacement(entry))} · ${esc(fmtSchedule(rid))}"><span>${esc(abbr)}</span><small class="schedule-summary">${esc(fmtSchedule(rid))}</small></button>`;
+        }).join('');
+        rows+=`<div class="row" data-row="${sl.id}">
+          <div class="rlabel">${esc(nameFor(sl))}</div>
+          <div class="platrow">${btns}</div></div>`;
+        let linkRows='';
+        fanout.forEach(([plat,type])=>{
+          const rid=sl.id+'__'+plat.replace(/[^a-z]/gi,'');
+          if(!state[rid+'__posted']) return;
+          linkRows+=`<div class="row" data-row="${rid}link">
+            <div class="rlabel">${esc(plat)}<span class="kind">${esc(exactPlacement({brand,tr,sl,plat,type,rid}))}</span></div>
+            <input class="idea" data-k="${rid}__link" placeholder="paste link" value="${esc(state[rid+'__link']||'')}">
+            <input class="idea" data-k="${rid}__date" placeholder="date" style="max-width:100px;flex:0 0 100px;" value="${esc(state[rid+'__date']||'')}"></div>`;
+        });
+        if(linkRows) linkSections += `<div class="gcard ${brand.key}"><div class="gcard-hd">🔗 ${esc(tr.name)} · ${esc(nameFor(sl))}</div>${linkRows}</div>`;
+      });
+      if(rows) assetCards += `<div class="gcard ${brand.key}"><div class="gcard-hd">${esc(tr.name)} · ${esc(wkOf(tr))}<span class="badge">${slots.length}</span></div>${rows}</div>`;
+    });
+    if(assetCards){ html += brandHead(brand) + assetCards; }
+    if(linkSections){ html += `<div class="derived-note" style="margin-top:2px;">Links — only shows platforms marked posted above.</div>` + linkSections; }
+  });
+  if(!any) html+=`<div class="gcard"><div class="empty-hint">Nothing to distribute yet — add ideas on the Plan tab.</div></div>`;
+  V.innerHTML=html; bindImpl(V);
+}
+function bindImpl(V){
+  V.querySelectorAll('input[data-k]').forEach(inp=>inp.addEventListener('input',e=>{ state[e.target.dataset.k]=e.target.value; save(); }));
+  V.querySelectorAll('.platbtn').forEach(btn=>btn.addEventListener('click',()=>{
+    const rid=btn.dataset.plat;
+    state[rid+'__posted'] = !state[rid+'__posted'];
+    save(); renderImpl();
+  }));
+}
+function renderFollow(){
+  const V=document.getElementById('view-follow');
+  let html=`<div class="derived-note">After it's live: add the videos into the blogs and wire the interlinks. Auto-built from the Plan's videos and blogs — pair them up here.</div>`;
+  let any=false;
+  BRANDS.forEach(brand=>{
+    let videoRows='', blogRows='';
+    tracksOf(brand).forEach(tr=>slotsFor(tr).forEach(sl=>{
+      const k=KIND[sl.kind]; if(!k) return;
+      if(k.follow==='video'){
+        const fid=sl.id+'__fu';
+        const cid=sl.id+'__comment';
+        videoRows+=`<div class="row" data-row="${fid}">
+          <div class="rlabel">${esc(nameFor(sl))}<span class="kind">${esc(tr.name)} · embed in blog + YT playlist</span></div>
+          <input class="idea fu-note" data-k="${fid}__idea" placeholder="which blog does this embed into?" value="${esc(state[fid+'__idea']||'')}">
+          ${statusHtml(fid)}</div>
+        <div class="row" data-row="${cid}">
+          <div class="rlabel">${esc(nameFor(sl))}<span class="kind">${esc(tr.name)} · pin link-back comment on every platform post</span></div>
+          <input class="idea fu-note" data-k="${cid}__idea" placeholder="blog / related-content link to drop as the comment" value="${esc(state[cid+'__idea']||'')}">
+          ${statusHtml(cid)}</div>`;
+      }
+      if(k.follow==='blog'){
+        const fid=sl.id+'__fu';
+        blogRows+=`<div class="row" data-row="${fid}">
+          <div class="rlabel">${esc(nameFor(sl))}<span class="kind">${esc(tr.name)} · add video + interlinks · confirm ring resolves</span></div>
+          <input class="idea fu-note" data-k="${fid}__idea" placeholder="which video embeds here? interlink notes…" value="${esc(state[fid+'__idea']||'')}">
+          ${statusHtml(fid)}</div>`;
+      }
+    }));
+    let brandHtml='';
+    brandHtml+= videoRows ? `<div class="gcard ${brand.key}"><div class="gcard-hd">🎥 Videos → embed into a blog</div>${videoRows}</div>` : '';
+    brandHtml+= blogRows ? `<div class="gcard ${brand.key}"><div class="gcard-hd">📝 Blogs → add video + interlinks</div>${blogRows}</div>` : '';
+    if(brandHtml){ html+=brandHead(brand)+brandHtml; any=true; }
+  });
+  if(!any) html+=`<div class="gcard"><div class="empty-hint">No videos or blogs planned yet — add them on the Plan tab.</div></div>`;
+  html+=`<div class="foot-tip">Reminder: publish a blog cluster together so its interlinks never 404, then share one/day.</div>`;
+  V.innerHTML=html; bindDerived(V);
+}
+/* ---------------- Binding ---------------- */
+function bindPlan(){
+  const V=document.getElementById('view-plan');
+  V.querySelectorAll('input.idea').forEach(inp=>inp.addEventListener('input',e=>{ state[e.target.dataset.k]=e.target.value; save(); }));
+  V.querySelectorAll('input[data-prio]').forEach(inp=>inp.addEventListener('change',e=>{ state[e.target.dataset.prio+'__prio']=e.target.value; save(); renderPlan(); }));
+  bindStatus(V);
+  V.querySelectorAll('.adddyn').forEach(btn=>btn.addEventListener('click',()=>{
+    const tr=TRACKS.find(t=>t.key===btn.dataset.addtrack); if(!tr) return;
+    addDynSlot(tr); renderPlan();
+  }));
+  V.querySelectorAll('.rmdyn').forEach(btn=>btn.addEventListener('click',()=>{
+    const tr=TRACKS.find(t=>t.key===btn.dataset.rmtrack); if(!tr) return;
+    removeDynSlot(tr, btn.dataset.rmid); renderPlan();
+  }));
+  V.querySelectorAll('.phead[data-collapse]').forEach(h=>h.addEventListener('click',ev=>{
+    if(ev.target.closest('input')) return;
+    const key=h.dataset.collapse+'__collapsed'; state[key]=!state[key];
+    h.closest('.panel').classList.toggle('collapsed',!!state[key]); save();
+  }));
+}
+function bindDerived(V){
+  V.querySelectorAll('input[data-k]').forEach(inp=>inp.addEventListener('input',e=>{ state[e.target.dataset.k]=e.target.value; save(); }));
+  bindStatus(V);
+}
+function bindStatus(V){
+  V.querySelectorAll('.status').forEach(sc=>{
+    const id=sc.dataset.status;
+    applyStatus(sc);
+    sc.querySelectorAll('.st').forEach(btn=>btn.addEventListener('click',()=>{
+      const v=btn.dataset.v; state[id+'__st']=(state[id+'__st']===v)?'':v; applyStatus(sc); save();
+    }));
+  });
+  V.querySelectorAll('.row[data-row]').forEach(r=>{ const id=r.dataset.row; r.classList.toggle('done', state[id+'__st']==='d'); });
+}
+function applyStatus(sc){
+  const v=state[sc.dataset.status+'__st']||'';
+  sc.querySelectorAll('.st').forEach(b=>b.classList.toggle('on', b.dataset.v===v && v!==''));
+  const row=sc.closest('.row'); if(row) row.classList.toggle('done', v==='d');
+}
+/* ---------------- Tabs ---------------- */
+const RENDERERS = { plan:renderPlan, prep:renderPrep, sched:renderSchedule, map:renderMap, impl:renderImpl, follow:renderFollow };
+function showTab(name){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active', t.dataset.tab===name));
+  document.querySelectorAll('.panel-view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('view-'+name).classList.add('active');
+  RENDERERS[name]();       // re-derive on every open so it reflects the current Plan
+  state.__tab=name; save();
+}
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>showTab(t.dataset.tab)));
+/* cycle-strip inputs (shared header) */
+document.querySelectorAll('.cyc input[data-k]').forEach(inp=>{
+  inp.value = state[inp.dataset.k] || inp.value;
+  inp.addEventListener('input',e=>{ state[e.target.dataset.k]=e.target.value; save(); if(document.querySelector('.tab.active').dataset.tab==='plan') renderPlan(); });
+});
+document.getElementById('weekOfTop').addEventListener('input',e=>{ state.weekOf=e.target.value; Object.keys(state).filter(k=>k.endsWith('__schedDate')||k.endsWith('__schedTime')).forEach(k=>delete state[k]); save(); syncTitleWeekOf(); });
+document.getElementById('btnPrint').addEventListener('click',()=>window.print());
+document.getElementById('btnClear').addEventListener('click',()=>{
+  if(!confirm('Clear everything on this template? (Keeps nothing.)')) return;
+  state={}; save();
+  document.querySelectorAll('.cyc input[data-k]').forEach(i=>i.value='');
+  document.getElementById('weekOfTop').value='';
+  syncTitleWeekOf();
+  showTab('plan');
+});
+/* ---------------- Week-of-7-20 pre-fill (seeds once; your edits are preserved) ---------------- */
+function seedWeek0720(){
+  const SEED = {
+    weekOf:'2026-07-20',
+    vidWeek:'4', rotWeekA:'4', rotWeekB:'None', cycWeek:'6', vetVidWeek:'1', vetWeek:'1', cycPhase:'7', rohBlogPhase:'7',
+    // Priority seeds — blogs = Semrush value score, videos/shorts = manual (your call)
+    'video-lf__prio':'100',
+    'roh-lf__prio':'100',
+    'video-r1__prio':'90',
+    'vet-reel__prio':'88',
+    'mktA-reel__prio':'80',
+    'video-r2__prio':'74',
+    'video-r3__prio':'68',
+    'roh-r1__prio':'90',
+    'roh-r2__prio':'84',
+    'roh-r3__prio':'78',
+    'roh-r4__prio':'60',
+    'roh-r5__prio':'55',
+    'mktA-car__prio':'70',
+    'roh-car__prio':'70',
+    'vet-car__prio':'72',
+    'mktA-stat__prio':'60',
+    'roh-static__prio':'60',
+    'video-gbp__prio':'55',
+    'mktA-gbp__prio':'65',
+    'roh-gbp__prio':'60',
+    'vet-gbp__prio':'58',
+    'vet-story__prio':'60',
+    'vet-short__prio':'82',
+    'video-li__prio':'55',
+    'roh-social__prio':'50',
+    'blog-thu__prio':'161',
+    'blog-sat__prio':'60',
+    'blog-wed__prio':'206',
+    'blog-fri__prio':'60',
+    'blog-mon__prio':'135',
+    'blog-tue__prio':'100',
+    // IHWI Video · Week 4 · VERONA (all filmed 7-18). Long-form is the anchor; reels are standalone cuts.
+    'video-lf__idea':'Living in Verona, WI: Why I Call It Home — long-form (filmed · anchor / YouTube destination)',
+    'video-r1__idea':'Reel 1 — More to Verona than Epic (Mon, pin · end card, no CTA in cut)',
+    'video-r2__idea':'Reel 2 — Verona Identity Crisis (Wed · has CTA)',
+    'video-r3__idea':'Reel 3 — Why Cathedral Point (Fri)',
+    'video-gbp__idea':'"I consider Verona home" intro → GBP + Nextdoor (Sat)',
+    'video-li__idea':'Living in Verona — LinkedIn share (Mon)',
+    // Market Rotation · Market A = VERONA (Week 4). Market B not used this week (struck out).
+    'mktA-reel__idea':'Verona market reel — cut from the Living in Verona long-form',
+    'mktA-stat__idea':'Verona stat card — May closings (median · DOM · supply)',
+    'mktA-car__idea':'Verona carousel — Living in Verona (5 slides)',
+    'mktA-gbp__idea':'Verona market update → integrityhomeswi.com/verona/',
+    // IHWI Blogs · Week 6 · Waunakee + Sun Prairie (real files: Drive 1Qg1Th…/Blogs/1 - Blogs — 4 FINAL blogs)
+    'blog-mon__idea':'Things to Do in Waunakee',
+    'blog-tue__idea':'Earnest Money: How It Works in Wisconsin',
+    'blog-wed__idea':'Best Places to Shop in Sun Prairie',
+    'blog-thu__idea':'Waunakee vs Sun Prairie',
+    'blog-fri__idea':'',
+    'blog-sat__idea':'',
+    // IHWI Vet Cluster · Week 1 — VA pillar launch (The Veteran's Guide to Buying a Home in Dane County)
+    'vet-gbp__idea':"Veteran's Guide to Buying a Home in Dane County → GBP launch (Mon)",
+    'vet-reel__idea':'Your VA loan is stronger than you think — pillar Reel (Tue)',
+    'vet-car__idea':"The Veteran's Guide — 6-slide carousel (Wed)",
+    'vet-story__idea':'"If you served, read this before you buy" — 3-frame story (Wed)',
+    'vet-short__idea':"The Veteran's Guide — YouTube long-form / Short (Thu)",
+    'vetblogs__ids':['pillar','s1','s2','s3','s4','s5'],
+    'vetblogs-pillar__idea':"PILLAR — The Veteran's Guide to Buying a Home in Dane County",
+    'vetblogs-s1__idea':'VA Loan Offer Strategy: How Veterans Win in Dane County',
+    'vetblogs-s2__idea':'VA Loans 101 for Wisconsin Veterans',
+    'vetblogs-s3__idea':'VA Loan Myths, Straight Answers',
+    'vetblogs-s4__idea':'Using Your VA Entitlement Again (Second-Time Use)',
+    'vetblogs-s5__idea':'Buying with a VA Loan in Madison, Step by Step',
+    // IHWI Vet Cluster — social pieces open; blogs done
+    'vet-gbp__st':'','vet-reel__st':'','vet-car__st':'','vet-story__st':'','vet-short__st':'',
+    'vetblogs-pillar__st':'d','vetblogs-s1__st':'d','vetblogs-s2__st':'d','vetblogs-s3__st':'d','vetblogs-s4__st':'d','vetblogs-s5__st':'d',
+    // ROH · Phase 7 · C&P exam — long-form anchor + 3 reels this week (#4-8 = next week / 7-27)
+    'roh-lf__idea':'VA C&P Exam: Is It a Good Sign? — long-form (anchor · Jul 20 with the pillar blog)',
+    'roh-r1__idea':'What Is a C&P Exam and Why Does the VA Require One? (0:22)',
+    'roh-r2__idea':'How to Prepare for Your C&P Exam: 4 Mistakes to Avoid (1:43)',
+    'roh-r3__idea':'The Biggest Mistake Veterans Make During a C&P Exam (1:11)',
+    'roh-r4__idea':'',
+    'roh-car__idea':'C&P exam — what to know carousel (Tue)',
+    'roh-static__idea':'VA math: 50% + 50% = 80% infographic',
+    'roh-gbp__idea':'C&P exam guide → GBP update (Wed)',
+    'roh-social__idea':'Reddit r/Veterans + Nextdoor — C&P guide (soft, point to CVSO)',
+    'rohblogs__ids':['p0','p1','p2','p3','p4','p5'],
+    'rohblogs-p0__idea':'PILLAR — What Happens After You File a VA Disability Claim?',
+    'rohblogs-p1__idea':'How Long Does a VA Disability Claim Take?',
+    'rohblogs-p2__idea':'What Is a C&P Exam?',
+    'rohblogs-p3__idea':'How VA Disability Ratings Work',
+    'rohblogs-p4__idea':'You Got Your VA Rating. Now What?',
+    'rohblogs-p5__idea':'WI Veteran Benefits After a VA Disability Rating',
+    // ROH blogs — all published/done
+    'rohblogs-p0__st':'d','rohblogs-p1__st':'d','rohblogs-p2__st':'d','rohblogs-p3__st':'d','rohblogs-p4__st':'d','rohblogs-p5__st':'d',
+    // Distribution tiers — A = full launch, B = selective, C = library/support.
+    'video-lf__tier':'a','video-r1__tier':'a','video-r2__tier':'b','video-r3__tier':'b','video-gbp__tier':'c','video-li__tier':'b',
+    'mktA-reel__tier':'b','mktA-stat__tier':'b','mktA-car__tier':'b','mktA-gbp__tier':'c',
+    'blog-mon__tier':'b','blog-tue__tier':'c','blog-wed__tier':'b','blog-thu__tier':'b','blog-fri__tier':'a','blog-sat__tier':'b',
+    'vet-gbp__tier':'c','vet-reel__tier':'a','vet-car__tier':'b','vet-story__tier':'c','vet-short__tier':'b',
+    'vetblogs-pillar__tier':'a','vetblogs-s1__tier':'b','vetblogs-s2__tier':'b','vetblogs-s3__tier':'c','vetblogs-s4__tier':'c','vetblogs-s5__tier':'c',
+    'roh-lf__tier':'a','roh-r1__tier':'a','roh-r2__tier':'b','roh-r3__tier':'b','roh-r4__tier':'c','roh-r5__tier':'c','roh-car__tier':'b','roh-static__tier':'c','roh-gbp__tier':'c','roh-social__tier':'c',
+    'rohblogs-p0__tier':'a','rohblogs-p1__tier':'b','rohblogs-p2__tier':'b','rohblogs-p3__tier':'c','rohblogs-p4__tier':'c','rohblogs-p5__tier':'c',
+    // Prep status: Verona filmed + ROH reels #1-3 recorded/edited + SP/Waunakee blogs built + Vet pillar live = Done.
+    // Thu Kilkenny blog = To-do; Sat Sun Prairie market update = Scheduled.
+    'video-lf__prep__st':'d','video-r1__prep__st':'d','video-r2__prep__st':'d','video-r3__prep__st':'d',
+    'roh-lf__prep__st':'d','roh-r1__prep__st':'d','roh-r2__prep__st':'d','roh-r3__prep__st':'d',
+    'blog-mon__prep__st':'d','blog-tue__prep__st':'d','blog-wed__prep__st':'d','blog-fri__prep__st':'d',
+    'blog-thu__prep__st':'t','blog-sat__prep__st':'s',
+    'vet-reel__prep__st':'d','vet-car__prep__st':'d','vet-short__prep__st':'d',
+  };
+  Object.keys(SEED).forEach(k=>{ if(state[k]===undefined) state[k]=SEED[k]; });
+  ['rotWeekA','rotWeekB','mktA-reel__idea','mktA-stat__idea','mktA-car__idea','mktA-gbp__idea',
+   'rohblogs-p0__st','rohblogs-p1__st','rohblogs-p2__st','rohblogs-p3__st','rohblogs-p4__st','rohblogs-p5__st',
+   'vet-gbp__st','vet-reel__st','vet-car__st','vet-story__st','vet-short__st',
+   'vetblogs__ids','vetblogs-pillar__idea','vetblogs-s1__idea','vetblogs-s2__idea','vetblogs-s3__idea','vetblogs-s4__idea','vetblogs-s5__idea',
+   'vetblogs-pillar__st','vetblogs-s1__st','vetblogs-s2__st','vetblogs-s3__st','vetblogs-s4__st','vetblogs-s5__st',
+    ...Object.keys(SEED).filter(k=>k.endsWith('__tier'))].forEach(k=>{ if(SEED[k]!==undefined) state[k]=SEED[k]; });
+  state.__seed='wk0720-v9-priority-slots';
+}
+/* ---------------- Boot ---------------- */
+load();
+if(state.__seed !== 'wk0720-v9-priority-slots') seedWeek0720();
+// Preserve planner content, but regenerate stale schedule defaults when this
+// scheduling engine changes. This prevents old duplicate times from surviving
+// in browser localStorage.
+if(state.__scheduleVersion!==SCHEDULE_VERSION){
+  Object.keys(state).filter(k=>k.endsWith('__schedDate')||k.endsWith('__schedTime')).forEach(k=>delete state[k]);
+  if((state['roh-r4__idea']||'').toLowerCase().includes('post next week')) state['roh-r4__idea']='';
+  state.__scheduleVersion=SCHEDULE_VERSION;
+}
+document.querySelectorAll('.cyc input[data-k]').forEach(inp=>{ if(state[inp.dataset.k]!==undefined) inp.value=state[inp.dataset.k]; });
+if(state.weekOf) document.getElementById('weekOfTop').value = state.weekOf;
+syncTitleWeekOf();
+// This week both blog clusters (ROH Phase 7 + IHWI Vet Cluster) are fully published — force Done on Plan AND Prep every load.
+// Vet Cluster + ROH blogs: ARTICLES are live, PROMOS still pending — same rule as Week 6. Self-healing every load.
+['rohblogs','vetblogs'].forEach(tk=>{ (state[tk+'__ids']||[]).forEach(id=>{ const sid=tk+'-'+id;
+  if(state[sid+'__st']==='d') state[sid+'__st']='';          // clear stale full-done → promos show To do
+  state[sid+'__prep__st']='d';                                // article written/live
+  state[sid+'__WebsiteCMS__pubStatus']='published';           // the live article = done; promos stay To-do
+}); });
+// Week 6 blog ARTICLES are live; promos still pending. Enforce EVERY load (self-healing) so a stale
+// "whole blog done" flag can't cascade the promos to Published on the Placement Map / Schedule.
+['blog-mon','blog-tue','blog-wed','blog-thu'].forEach(k=>{
+  if(state[k+'__st']==='d') state[k+'__st']='';        // clear stale full-done → promos show To do again
+  state[k+'__prep__st']='d';                            // article written/live
+  state[k+'__WebsiteCMS__pubStatus']='published';       // the live article placement = done
+});
+// One-time correction: IHWI Week 6 blogs = Waunakee + Sun Prairie (real Drive files). Fixes browsers stuck on the Week 7 DeForest/Middleton set. Clears the 2 invented titles.
+if(state.__blogfix!=='wk6-waunakee-sunprairie-v4-liveonly'){
+  state.cycWeek='6';
+  const BF={'blog-mon':['Things to Do in Waunakee','135'],'blog-tue':['Earnest Money: How It Works in Wisconsin','100'],'blog-wed':['Best Places to Shop in Sun Prairie','206'],'blog-thu':['Waunakee vs Sun Prairie','161'],'blog-fri':['',''],'blog-sat':['','']};
+  Object.keys(BF).forEach(k=>{ state[k+'__idea']=BF[k][0]; if(BF[k][1]) state[k+'__prio']=BF[k][1]; });
+  // Week 6 blog ARTICLES are live; promos still pending. Keep on the Schedule but mark the article row Published.
+  ['blog-mon','blog-tue','blog-wed','blog-thu'].forEach(k=>{
+    state[k+'__st']='';                              // not fully done (promos pending) → stays on the Schedule
+    state[k+'__prep__st']='d';                       // article is written/live → prep done
+    state[k+'__WebsiteCMS__pubStatus']='published';  // the live article placement = done
+  });
+  state.__blogfix='wk6-waunakee-sunprairie-v4-liveonly';
+}
+showTab(state.__tab && RENDERERS[state.__tab] ? state.__tab : 'plan');
+save();
+</script>
+</body>
+</html>
+
